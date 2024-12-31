@@ -1,0 +1,27 @@
+.portableText {
+  @apply text-lg leading-relaxed;
+}
+
+.portableText p {
+  @apply text-base text-[#1F2937] leading-8 mb-6 last:mb-0;
+}
+
+.portableText li {
+  @apply text-base leading-9;
+}
+
+.portableText strong {
+  @apply inline-block text-lg text-primary font-semibold leading-6 mb-2;
+}
+
+.portableText ul {
+  @apply text-primary leading-9 ml-4 list-image-dot mb-6 last:mb-0;
+}
+
+.portableText ul li {
+  @apply pl-2;
+}
+
+.portableText a {
+  @apply text-[#06813E] font-medium underline;
+}

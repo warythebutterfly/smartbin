@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --swiper-navigation-size: 40px;
+  --swiper-navigation-top-offset: 50%;
+  --swiper-navigation-sides-offset: 10px;
+  --swiper-navigation-color: #06813e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  @apply w-full max-w-[1280px] mx-auto px-4 md:px-6;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-wrapper {
+  align-items: center;
+}
+
+/* .swiper-button-prev {
+  left: -20px;
+}
+
+.swiper-button-next {
+  right: -20px;
+} */
+
+/* Partners Section:- Partners Grid */
+.partner-item:nth-child(4n) {
+  border-right: none;
+}
