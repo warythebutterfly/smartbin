@@ -54,7 +54,7 @@ const PrivacyView = ({ privacyData, termsData }: PrivacyViewProps) => {
               {current === 0 ? privacyData?.title : termsData?.title}
             </h1>
             {/* <p className="text-primary text-sm leading-7">
-              # PRIVACY POLICY
+              YabaTech PlastoGas Hub PRIVACY POLICY
             </p> */}
             <p className="text-primary text-sm leading-7">
               Last Updated: {lastUpdatedAt}

@@ -24,7 +24,7 @@ const PartnersHeroSection = () => {
                 rel="noreferrer noopener"
                 className="text-primary underline font-medium"
               >
-                # Technologies
+                YabaTech PlastoGas Hub Technologies
               </Link>{" "}
               focuses on building software for internal use, public use and
               private use. We have helped our partners build and scale their

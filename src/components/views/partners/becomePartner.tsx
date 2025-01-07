@@ -83,7 +83,7 @@ const BecomePartner = () => {
                   Email:
                 </Text>
                 <Text className="text-[#4B5563] leading-6">
-                  partners@#.com
+                  yctplastogashub@gmail.com
                 </Text>
               </div>
 

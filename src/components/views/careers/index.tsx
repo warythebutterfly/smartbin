@@ -45,7 +45,7 @@ const CareersView = ({
   return (
     <Fragment>
       <Head>
-        <title>Careers | #</title>
+        <title>Careers | YabaTech PlastoGas Hub</title>
       </Head>
       <section className="pt-[112px] pb-40">
         <div className="wrapper">
@@ -54,7 +54,7 @@ const CareersView = ({
               <Image src={CareersHero} alt="Careers Hero" />
             </div>
             <p className="text-[#374151] max-w-[400px]">
-              Join # and take on new problems that challenge your
+              Join YabaTech PlastoGas Hub and take on new problems that challenge your
               skills plus opportunities to display your leadership qualities.
             </p>
           </div>
@@ -70,14 +70,14 @@ const CareersView = ({
                 <p className="text-[#6B7280] leading-6">
                   View all open roles at{" "}
                   <Link href="/" className="underline text-[#252422]">
-                    #
+                   YabaTech PlastoGas Hub
                   </Link>{" "}
                   or shoot us an email at{" "}
                   <Link
-                    href="mailto:career@#.com"
+                    href="mailto:yctplastogashub@gmail.com"
                     className="underline text-primary"
                   >
-                    career@#.com
+                    yctplastogashub@gmail.com
                   </Link>{" "}
                   and we will be in touch.
                 </p>

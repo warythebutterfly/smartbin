@@ -8,7 +8,7 @@ const CareerDetailsView = ({ data }: { data: Career }) => {
   return (
     <Fragment>
       <Head>
-        <title>{data?.jobTitle} | Careers @ #</title>
+        <title>{data?.jobTitle} | Careers @ YabaTech PlastoGas Hub</title>
       </Head>
 
       <section className="pt-[56px] md:pt-[112px] pb-[49px] bg-[#F9FAFB] px-4">

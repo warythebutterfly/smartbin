@@ -10,7 +10,7 @@ const PartnersView = ({ data }: { data: Partner[] }) => {
   return (
     <Fragment>
       <Head>
-        <title>Our Partners | #</title>
+        <title>Our Partners | YabaTech PlastoGas Hub</title>
       </Head>
       <PartnersHeroSection />
       <PartnersGrid data={data} />

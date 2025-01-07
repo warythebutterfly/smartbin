@@ -8,7 +8,7 @@ const ProductsView = ({ products }: { products: Product[] }) => {
   return (
     <Fragment>
       <Head>
-        <title>Products | #</title>
+        <title>Products | YabaTech PlastoGas Hub</title>
       </Head>
       <HeroSection />
       <ProductListings products={products} />

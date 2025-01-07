@@ -18,7 +18,7 @@ const InvestorsView = ({
   return (
     <Fragment>
       <Head>
-        <title>Investors | #</title>
+        <title>Investors | YabaTech PlastoGas Hub</title>
       </Head>
 
       <section>

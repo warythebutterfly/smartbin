@@ -9,7 +9,7 @@ const TeamView = ({ members }: { members: Team[] }) => {
   return (
     <Fragment>
       <Head>
-        <title>Team | #</title>
+        <title>Team | YabaTech PlastoGas Hub</title>
       </Head>
       <section className="pt-[96px] pb-[172px] bg-team bg-right bg-no-repeat">
         <div className="wrapper">

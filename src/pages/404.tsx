@@ -8,7 +8,7 @@ const NotFoundPage = () => {
   return (
     <Fragment>
       <Head>
-        <title>Page not found | #</title>
+        <title>Page not found | YabaTech PlastoGas Hub</title>
       </Head>
       <section className="pt-[200px] flex justify-center h-screen">
         <div className="max-w-[461px] mx-auto flex flex-col items-center relative">

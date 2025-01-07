@@ -15,10 +15,10 @@ const LandingView = ({ data }: { data: LandingProps }) => {
   return (
     <Fragment>
       <Head>
-        <title>#</title>
+        <title>YabaTech PlastoGas Hub</title>
         <meta
           name="description"
-          content="# is the parent company of # Technologies which focuses on building software for internal use, public use, and providing software service for its partners."
+          content="YabaTech PlastoGas Hub is the parent company of YabaTech PlastoGas Hub Technologies which focuses on building software for internal use, public use, and providing software service for its partners."
         />
       </Head>
       <HeroSection data={data?.heroSection} />
