@@ -75,7 +75,9 @@ const DropdownMenu = ({
           <div className="max-w-2xl mx-auto pt-6 landscape:pb-8 flex flex-col items-center">
             <div className="mb-10">
               <Link href="/" onClick={closeDropdown}>
-                <Logo className="w-60 h-12" />
+                <h1 className={`text-center text-2xl font-bold`}>
+                  YctPlastoGasHub
+                </h1>
               </Link>
             </div>
 

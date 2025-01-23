@@ -66,21 +66,23 @@ const Navbar = () => {
       >
         <nav className="wrapper py-6 flex items-center justify-between">
           <Link href="/">
-            <Logo mode={mapLogoMode[router.pathname] ?? "dark"} />
+            <h1
+              className={`text-2xl font-bold ${
+                mapLogoMode[router.pathname] ?? "text-black"
+              }`}
+            >
+              YctPlastoGasHub
+            </h1>
           </Link>
-
           <button
             className="border-none text-black rounded-lg"
             onClick={() => toggleDropdown()}
           >
             <MenuIcon className={`w-8 h-8 ${menuColor}`} />
           </button>
-
           {/* <Link href="/investors">
-          <Button className={`w-[107px] ${mapBtnColor[router.pathname]}`}>
-            Investors
-          </Button>
-        </Link> */}
+      <Button className={`w-[107px] ${mapBtnColor[router.pathname]}`}> Investors </Button>
+    </Link> */}
         </nav>
       </header>
 
