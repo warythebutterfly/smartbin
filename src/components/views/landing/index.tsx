@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import dynamic from "next/dynamic";
 import OurValues from "./ourValues";
 import HeroSection from "./heroSection";
-import AboutVictoriaBros from "./aboutVictoriaBros";
+import AboutYctPlastoGas from "./aboutYctPlastoGas";
 import VisionMission from "./visionMission";
 import { Landing as LandingProps } from "~/sanity/lib";
 
@@ -22,7 +22,7 @@ const LandingView = ({ data }: { data: LandingProps }) => {
         />
       </Head>
       <HeroSection data={data?.heroSection} />
-      <AboutVictoriaBros data={data?.aboutSection} />
+      <AboutYctPlastoGas data={data?.aboutSection} />
       <VisionMission data={data?.visionSection} />
       <OurValues />
       {data?.testimonialSection?.length ? (

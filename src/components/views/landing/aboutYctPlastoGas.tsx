@@ -2,10 +2,10 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button, Heading, Text } from "@/components/ui";
-import AboutVictoria from "@/assets/img/about-victoria.png";
+import AboutYctPlastoGasHub from "@/assets/img/about-yctplasto.jpeg";
 import { Landing } from "~/sanity/lib";
 
-const AboutVictoriaBros = ({ data }: { data: Landing["aboutSection"] }) => {
+const AboutYctPlastoGas = ({ data }: { data: Landing["aboutSection"] }) => {
   return (
     <section id="about" className="pt-14 pb-16 bg-white px-4">
       <div>
@@ -19,17 +19,16 @@ const AboutVictoriaBros = ({ data }: { data: Landing["aboutSection"] }) => {
             as="h2"
             className="text-xl md:text-[40px] font-normal md:leading-[56px] text-center"
           >
-            Our mission is “to advance
-            <span className="text-[#9A4151]"> the present and future </span>
-            by bridging the gap between core human needs, science, and
-            technology”.
+            Our mission is “to revolutionize
+            <span className="text-[#9A4151]">  plastic waste management </span>
+            through innovative technologies, community empowerment, and sustainable practices, creating a cleaner and greener future”.
           </Heading>
         </div>
 
         <div>
           <div className="mb-8 flex justify-center">
             <Image
-              src={AboutVictoria}
+              src={AboutYctPlastoGasHub}
               alt="About #"
               className="rounded-2xl"
             />
@@ -76,4 +75,4 @@ const AboutVictoriaBros = ({ data }: { data: Landing["aboutSection"] }) => {
   );
 };
 
-export default AboutVictoriaBros;
+export default AboutYctPlastoGas;
