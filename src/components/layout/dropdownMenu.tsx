@@ -82,17 +82,12 @@ const DropdownMenu = ({
             <ul>
               {menus.map((menu) => (
                 <li key={menu.title} className="text-center">
-                  <Link
-                    href={menu.href}
-                    onClick={closeDropdown}
-                    className="block px-[10px] py-6 text-primary hover:text-[#06813E] transition-colors text-3xl"
-                  >
+                  <span className="block px-[10px] py-6 text-primary hover:text-[#06813E] transition-colors text-3xl cursor-not-allowed opacity-50">
                     {menu.title}
-                  </Link>
+                  </span>
                 </li>
               ))}
             </ul>
-
             <div className="mt-10 flex items-center gap-6 pl-[10px] lg:pl-0">
               <Link
                 href="https://www.linkedin.com/company/#"

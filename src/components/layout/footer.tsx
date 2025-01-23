@@ -49,9 +49,9 @@ const Footer = () => {
           <ul className="flex lg:items-center gap-2 md:gap-4 text-sm font-normal leading-6">
             {menus.map((menu) => (
               <li key={menu.title}>
-                <Link href={menu.href} className="block px-[10px] lg:py-2">
+                <span className="block px-[10px] lg:py-2 cursor-not-allowed opacity-50">
                   {menu.title}
-                </Link>
+                </span>
               </li>
             ))}
           </ul>
