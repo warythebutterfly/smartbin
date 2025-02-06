@@ -54,8 +54,9 @@ const CareersView = ({
               <Image src={CareersHero} alt="Careers Hero" />
             </div>
             <p className="text-[#374151] max-w-[400px]">
-              Join YabaTech PlastoGas Hub and take on new problems that challenge your
-              skills plus opportunities to display your leadership qualities.
+              Join YabaTech PlastoGas Hub and take on new problems that
+              challenge your skills plus opportunities to display your
+              leadership qualities.
             </p>
           </div>
 
@@ -70,7 +71,7 @@ const CareersView = ({
                 <p className="text-[#6B7280] leading-6">
                   View all open roles at{" "}
                   <Link href="/" className="underline text-[#252422]">
-                   YabaTech PlastoGas Hub
+                    YabaTech PlastoGas Hub
                   </Link>{" "}
                   or shoot us an email at{" "}
                   <Link
