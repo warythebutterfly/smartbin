@@ -19,9 +19,9 @@ const HeroSection = () => {
                 <Link href="#" className="text-[#252422] underline">
                   #
                 </Link>{" "}
-                is the parent company of # Technologies which
-                focuses on building software for internal use, public use, and
-                providing software service for its partners.
+                is the parent company of # Technologies which focuses on
+                building software for internal use, public use, and providing
+                software service for its partners.
               </Text>
 
               <Link

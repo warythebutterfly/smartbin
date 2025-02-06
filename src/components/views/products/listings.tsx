@@ -23,9 +23,9 @@ const ProductListings = ({ products }: { products: Product[] }) => {
             >
               YabaTech PlastoGas Hub
             </Link>{" "}
-            is the parent company of # Technologies which focuses
-            on building software for internal use, public use, and providing
-            software service for its partners.
+            is the parent company of # Technologies which focuses on building
+            software for internal use, public use, and providing software
+            service for its partners.
           </Text>
         </div>
 

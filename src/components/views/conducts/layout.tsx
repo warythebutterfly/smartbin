@@ -15,7 +15,7 @@ const ConductsLayout = ({ children }: { children: ReactNode }) => {
           <Text className="text-[#D1D5DB]">
             At{" "}
             <Link href="/" className="underline text-white">
-            YabaTech PlastoGas Hub,
+              YabaTech PlastoGas Hub,
             </Link>{" "}
             we are committed to conducting our business in an ethical and honest
             manner. These conducts are designed to promote a culture of
