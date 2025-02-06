@@ -66,13 +66,7 @@ const Navbar = () => {
       >
         <nav className="wrapper py-6 flex items-center justify-between">
           <Link href="/">
-            <h1
-              className={`text-2xl font-bold ${
-                mapLogoMode[router.pathname] ?? "text-black"
-              }`}
-            >
-              YctPlastoGasHub
-            </h1>
+            <Logo mode={mapLogoMode[router.pathname] ?? "dark"} />
           </Link>
           <button
             className="border-none text-black rounded-lg"
