@@ -59,7 +59,7 @@ const OurValues = () => {
           <Text
             className={`${jost.className} text-lg text-[#E5E7EB] leading-[30px] tracking-[0.36px]`}
           >
-            Our values as a conglomerate waste management initiative are deeply
+            Our values as a waste management initiative are deeply
             aligned with our mission, vision and overall strategy. They guide
             our decision-making, shape our culture, and contribute to its
             overall success. Although we cannot include all positive values, we
