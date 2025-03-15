@@ -1,7 +1,7 @@
 import React, { Fragment, ReactNode } from "react";
 import Image from "next/image";
 import { Heading, Text } from "@/components/ui";
-import ConductsHero from "@/assets/img/conducts-hero.png";
+import ConductsHero from "@/assets/img/conducts.png";
 import Link from "next/link";
 
 const ConductsLayout = ({ children }: { children: ReactNode }) => {

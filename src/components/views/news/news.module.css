@@ -3,7 +3,7 @@
 }
 
 .portableText p {
-  @apply text-[#D1D5DB] my-3 leading-8;
+  @apply text-[#565855] my-3 leading-8;
 }
 
 .portableText li {
@@ -26,10 +26,12 @@
   @apply text-[#374151] font-medium underline;
 }
 
-.vision {
-  @apply text-white text-lg md:text-2xl md:leading-[44px] tracking-[-0.24px];
+/* Change color of active dot */
+.carousel .control-dots .dot {
+  background-color: #60B58A !important; /* Your desired color */
 }
 
-.mission {
-  @apply text-white font-normal md:leading-[44px] text-xl;
+/* Change color of inactive dots */
+.carousel .control-dots .dot:not(.selected) {
+  background-color: #374151 !important; /* Darker gray */
 }

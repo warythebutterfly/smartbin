@@ -36,6 +36,10 @@ const Footer = () => {
       title: "Team",
       href: "/team",
     },
+    {
+      title: "Our app",
+      href: "/",
+    },
     // {
     //   title: "Privacy Policy and Terms",
     //   href: "/privacy-policy",

@@ -30,7 +30,7 @@ const PartnersList = () => {
     <div className="mt-16 py-10 md:min-h-[112px]">
       <div className="flex flex-col gap-8 md:gap-0 md:flex-row md:items-center">
         <p className="font-medium text-lg text-[#374151] leading-8 mr-[51px]">
-          Partners:
+          Trusted by:
         </p>
 
         {isLoading ? <PartnersSkeleton /> : <Partners partners={partners} />}

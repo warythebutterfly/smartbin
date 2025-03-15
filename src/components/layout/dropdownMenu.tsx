@@ -58,6 +58,10 @@ const DropdownMenu = ({
       title: "Team",
       href: "/team",
     },
+    {
+      title: "Our app",
+      href: "/",
+    },
   ];
 
   return (

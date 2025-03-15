@@ -22,7 +22,7 @@ const VisionMission = ({ data }: { data: Landing["visionSection"] }) => {
         <div className="flex flex-col flex-1 md:flex-row justify-center mt-[8rem]">
           <div
             className="v-content bg-no-repeat bg-cover bg-center p-4 md:p-8 w-full md:w-1/2 z-[2] relative hover:scale-[1.1] hover:z-[2] transition-transform duration-700"
-            style={{ backgroundImage: "url(/img/vision.png)" }}
+            style={{ backgroundImage: "url(/img/mission.png)" }}
           >
             <div className="p-6 bg-[rgba(0,1,3,0.90)]">
               <Heading
@@ -37,7 +37,7 @@ const VisionMission = ({ data }: { data: Landing["visionSection"] }) => {
 
           <div
             className="m-content group bg-no-repeat bg-cover bg-center p-4 md:p-8 w-full md:w-1/2 z-[1] relative hover:scale-[1.1] hover:z-[2] transition-transform duration-700"
-            style={{ backgroundImage: "url(/img/mission.png)" }}
+            style={{ backgroundImage: "url(/img/vision.png)" }}
           >
             <div className="p-6 bg-[rgba(0,1,3,0.90)]">
               <Heading

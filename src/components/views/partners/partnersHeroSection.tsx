@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import PartnersHero from "@/assets/img/partners-hero.png";
+import PartnersHero from "@/assets/img/partners.png";
 import PartnershipGrowth from "@/assets/img/partnership-growth.png";
 import { Heading, Text } from "@/components/ui";
 import Link from "next/link";
@@ -12,7 +12,7 @@ const PartnersHeroSection = () => {
         <div className="hidden md:block w-full md:w-1/2 relative">
           <Image src={PartnersHero} alt="Partners Hero" fill />
         </div>
-        <div className="w-full md:w-1/2 bg-[#F9FAFB]">
+        <div className="w-full md:w-1/2 bg-white bg-team bg-right bg-no-repeat">
           <div className="pt-[calc(88px_+_96px)] px-4 md:px-16 pb-8 max-w-[630px]">
             <Heading className="text-[66px] leading-[72px] mb-6">
               Partners

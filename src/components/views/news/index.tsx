@@ -1,11 +1,13 @@
 import Head from "next/head";
 import Link from "next/link";
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { Heading, RichText, Text } from "@/components/ui";
 import { Investor, News } from "~/sanity/lib";
 import styles from "./news.module.css";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Image from "next/image";
+import NewsCol from "@/assets/img/news2-bg.png";
 
 interface InvestorViewProps {
   data: {
@@ -38,48 +40,83 @@ const NewsView = ({ data: { newsData } }: InvestorViewProps) => {
           </div>
         </div>
 
-        <div className="bg-primary pt-16 pb-[148px]">
+        <div className="bg-white pt-16 pb-[148px]">
           <div className="wrapper">
-            <Heading className="text-3xl md:text-[40px] font-normal mb-6 text-white">
+            <Heading className="text-3xl md:text-[40px] font-normal mb-6 text-black">
               News
             </Heading>
 
             {newsData && newsData?.length ? (
               <div className="pt-[80px]">
                 <div className="mb-12">
-                  <Heading className="text-2xl text-white font-medium leading-[48px] border-b border-b-[#60B58A] w-fit">
+                  <Heading className="text-2xl text-black font-medium leading-[48px] border-b border-b-[#60B58A] w-fit">
                     Corporate news
                   </Heading>
                 </div>
 
-                <Carousel
-                  showThumbs={false}
-                  infiniteLoop={true}
-                  showStatus={false}
-                >
-                  {newsData?.map((news) => (
-                    <div key={news._id} className="p-4">
-                      <Link href="#">
-                        <div className="pb-4 border-b border-b-[#374151] hover:border-b-[#9A4151] transition-colors flex flex-col gap-8">
-                          <p className="text-lg text-[#E5E7EB] leading-8 tracking-[0.27px]">
-                            {news.title}
-                          </p>
-                          <p className="text-[#D1D5DB] text-sm leading-6 tracking-[0.21px]">
-                            {news.publishedAt}
-                          </p>
+                <div className="grid grid-cols-4 gap-4">
+                  <div className="col-span-3">
+                    <Carousel
+                      showThumbs={false}
+                      infiniteLoop={true}
+                      showStatus={false}
+                      renderArrowPrev={(clickHandler, hasPrev) =>
+                        hasPrev && (
+                          <button
+                            onClick={clickHandler}
+                            className="absolute top-1/2 left-4 z-10 p-2 bg-black bg-opacity-10 rounded-full text-[#60B58A] text-2xl"
+                          >
+                            ◀ {/* Unicode arrow */}
+                          </button>
+                        )
+                      }
+                      renderArrowNext={(clickHandler, hasNext) =>
+                        hasNext && (
+                          <button
+                            onClick={clickHandler}
+                            className="absolute top-1/2 right-4 z-10 p-2 bg-black bg-opacity-10 rounded-full text-[#60B58A] text-2xl"
+                          >
+                            ▶ {/* Unicode arrow */}
+                          </button>
+                        )
+                      }
+                      renderIndicator={(onClickHandler, isSelected, index) => (
+                        <li
+                          className={`inline-block mx-1 w-3 h-3 rounded-full cursor-pointer ${
+                            isSelected ? "bg-[#60B58A]" : "bg-[#374151]"
+                          }`}
+                          onClick={onClickHandler}
+                        />
+                      )}
+                    >
+                      {newsData?.map((news) => (
+                        <div key={news._id} className="p-4">
+                          <Link href="#">
+                            <div className="pb-4 border-b border-b-[#374151] hover:border-b-[#9A4151] transition-colors flex flex-col gap-8">
+                              <b className="text-lg text-[#60B58A] leading-8 tracking-[0.27px]">
+                                {news.title}
+                              </b>
+                              <p className="text-[#60B58A] text-sm leading-6 tracking-[0.21px]">
+                                {news.publishedAt}
+                              </p>
+                            </div>
+                            <div className="h-[300px] overflow-y-auto">
+                              {" "}
+                              {/* Fixed height & scroll */}
+                              <RichText
+                                className={styles.portableText}
+                                content={news?.content}
+                              />
+                            </div>
+                          </Link>
                         </div>
-                        <div className="h-[300px] overflow-y-auto">
-                          {" "}
-                          {/* Fixed height & scroll */}
-                          <RichText
-                            className={styles.portableText}
-                            content={news?.content}
-                          />
-                        </div>
-                      </Link>
-                    </div>
-                  ))}
-                </Carousel>
+                      ))}
+                    </Carousel>
+                  </div>
+                  <div className="hidden md:block w-full relative">
+                    <Image src={NewsCol} alt="Partners Hero" fill />
+                  </div>
+                </div>
               </div>
             ) : null}
           </div>
