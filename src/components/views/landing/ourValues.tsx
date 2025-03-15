@@ -10,39 +10,39 @@ const jost = Jost({
 const OurValues = () => {
   const values = [
     {
-      title: "Integrity",
+      title: "Sustainability",
       description:
-        "Integrity as a core value for our company is foundational to us. We uphold honesty, transparency, fairness, sincerity, and ethical principles in all our business operations. Our strong ethical values extend to interactions with employees, customers, partners, and the wider community, which helps to build a reputation for reliability and ethical behavior, contributing to long-term success and positive stakeholder relationships.",
+        "We are committed to creating lasting solutions that promote environmental sustainability by reducing plastic waste, conserving resources, and fostering a circular economy.",
       img: "",
-      short: "I",
+      short: "S",
     },
     {
       title: "Innovation",
       description:
-        "Innovation as a core value for our company emphasizes the importance of creativity, a forward-thinking mindset, and continuous improvement. We foster a culture that encourages personal development and the implementation of new ideas, technologies, and processes. We seek to stay ahead in a rapidly changing business environment by improving our products and services, providing opportunities for growth, and embracing innovative ideas and technologies to maintain a competitive edge.",
+        "At YabaTech PlastoGas Hub, we believe in leveraging cutting-edge technologies and creative problem-solving to transform plastic waste into valuable resources and energy.",
       img: "",
       short: "I",
     },
     {
-      title: "Inclusiveness",
+      title: "Community Empowerment",
       description:
-        "Inclusiveness as a core value for our company, emphasizes a commitment to fostering a diverse and inclusive environment. We recognize, respect, and value differences among employees and promote equal opportunities. We are creating a culture where all voices are heard, which contributes to a dynamic and adaptive culture where every individual feels valued and can contribute to the company's success.",
+        "We aim to empower individuals and communities by providing training, tools, and opportunities to actively participate in sustainable waste management practices.",
       img: "",
-      short: "I",
-    },
-    {
-      title: "Quality",
-      description:
-        "Quality as a core value for our company signifies our commitment to maintaining the highest standards in products, services, and operations through rigorous quality control processes, attention to detail, and a continuous pursuit of improvement. We are dedicated to excellence, precision, and consistency throughout all aspects of our business, and by prioritizing quality, our company aims to meet and exceed customer expectations, establish a positive reputation, and ensure long-term success and overall competitiveness in the markets in which we operate.",
-      img: "",
-      short: "Q",
+      short: "CE",
     },
     {
       title: "Collaboration",
       description:
-        "Collaboration as a core value for our company emphasizes a culture that values teamwork, open-ended communication, and idea sharing. Our company aims to leverage the diverse perspectives and skills of our workforce, which enhances problem solving and promotes a cooperative and inclusive environment.",
+        "Partnerships are key to our success. By working with academic institutions, research organizations, and local communities, we combine expertise and resources to maximize impact.",
       img: "",
       short: "C",
+    },
+    {
+      title: "Environmental Stewardship",
+      description:
+        "We take responsibility for protecting our environment by promoting practices that minimize waste, reduce pollution, and align with international sustainability standards.",
+      img: "",
+      short: "ES",
     },
   ];
 
@@ -59,12 +59,12 @@ const OurValues = () => {
           <Text
             className={`${jost.className} text-lg text-[#E5E7EB] leading-[30px] tracking-[0.36px]`}
           >
-            Our values as a conglomerate company are deeply aligned with our
-            mission, vision and overall strategy. They guide our
-            decision-making, shape the company’s culture, and contribute to its
+            Our values as a conglomerate waste management initiative are deeply
+            aligned with our mission, vision and overall strategy. They guide
+            our decision-making, shape our culture, and contribute to its
             overall success. Although we cannot include all positive values, we
-            strive to ensure our culture, employees and partners align with
-            positive values that propels our company forward.
+            strive to ensure our culture and partners align with positive values
+            that propels us forward.
           </Text>
         </div>
 

@@ -8,7 +8,7 @@ const ServerErrorPage = () => {
   return (
     <Fragment>
       <Head>
-        <title>An error occurred | #</title>
+        <title>An error occurred | YabaTech PlastoGas Hub</title>
       </Head>
       <section className="pt-[200px] flex justify-center h-screen">
         <div className="max-w-[461px] mx-auto flex flex-col items-center relative">

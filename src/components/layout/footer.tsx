@@ -9,6 +9,10 @@ const Footer = () => {
     //   href: "/#vision",
     // },
     {
+      title: "News",
+      href: "/news",
+    },
+    {
       title: "Conducts",
       href: "/conducts",
     },
@@ -32,10 +36,10 @@ const Footer = () => {
       title: "Team",
       href: "/team",
     },
-    {
-      title: "Privacy Policy and Terms",
-      href: "/privacy-policy",
-    },
+    // {
+    //   title: "Privacy Policy and Terms",
+    //   href: "/privacy-policy",
+    // },
   ];
 
   return (

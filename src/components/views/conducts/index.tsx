@@ -9,7 +9,7 @@ const ConductsView = ({ data }: { data: Conduct[] }) => {
   return (
     <Fragment>
       <Head>
-        <title>Conducts | #</title>
+        <title>Conducts | YabaTech PlastoGas Hub</title>
       </Head>
       <ConductsLayout>
         <div className="bg-white pb-[265px]">

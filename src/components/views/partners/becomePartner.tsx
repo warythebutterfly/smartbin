@@ -5,6 +5,7 @@ import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ContactFormFields, contactFormSchema } from "@/utils/validationSchema";
 import { CheckIcon } from "@/components/icons";
+import contactFormEmailTemplate from "@/templates/contactForm";
 
 const jost = Jost({ subsets: ["latin"] });
 
@@ -33,16 +34,34 @@ const BecomePartner = () => {
     setIsSubmmitting(true);
     setIsContactFormSubmitted(false);
     try {
-      const response = await fetch(
-        "https://www.formbackend.com/f/a10e4a00598b8ec3",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ ...data }),
-        },
+      const emailTemplate = contactFormEmailTemplate(
+        data.name,
+        data.email,
+        data.country,
+        data.city,
+        data.phone,
+        data.subject,
+        data.message,
       );
+
+      console.log(emailTemplate);
+
+      const response = await fetch("/api/mailService", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(emailTemplate),
+      });
+      // const response = await fetch(
+      //   "https://www.formbackend.com/f/f7c8d07d7d517600",
+      //   {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify({ ...data }),
+      //   },
+      // );
+      console.log(response);
       if (response.ok) setIsContactFormSubmitted(true);
       setIsSubmmitting(false);
     } catch (error) {
@@ -63,8 +82,9 @@ const BecomePartner = () => {
           </div>
 
           <Text className={`text-[#534E50] leading-8 ${jost.className}`}>
-            We can evolve your software solutions and make your idea become
-            reality. Send us a message below and we will be in touch with you.
+            We can transform plastic waste into sustainable solutions and bring
+            innovative waste management ideas to life. Contact us below, and
+            let&apos;s create a cleaner, greener future together!
           </Text>
         </div>
 
@@ -83,7 +103,7 @@ const BecomePartner = () => {
                   Email:
                 </Text>
                 <Text className="text-[#4B5563] leading-6">
-                  partners@#.com
+                  yctplastogashub@gmail.com
                 </Text>
               </div>
 

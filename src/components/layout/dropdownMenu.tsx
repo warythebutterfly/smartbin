@@ -27,6 +27,10 @@ const DropdownMenu = ({
     //   href: "/#vision",
     // },
     {
+      title: "News",
+      href: "/news",
+    },
+    {
       title: "Conducts",
       href: "/conducts",
     },
@@ -92,7 +96,6 @@ const DropdownMenu = ({
                 </li>
               ))}
             </ul>
-
             <div className="mt-10 flex items-center gap-6 pl-[10px] lg:pl-0">
               <Link
                 href="https://www.linkedin.com/company/#"

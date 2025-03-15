@@ -51,7 +51,7 @@ const PrivacyPolicy = ({ data, preview, previewToken }: PageProps) => {
   return (
     <Fragment>
       <Head>
-        <title>Privacy Policy | #</title>
+        <title>Privacy Policy | YabaTech PlastoGas Hub</title>
       </Head>
       <PrivacyView
         privacyData={data?.privacyData}

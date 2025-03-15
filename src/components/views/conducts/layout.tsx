@@ -15,12 +15,12 @@ const ConductsLayout = ({ children }: { children: ReactNode }) => {
           <Text className="text-[#D1D5DB]">
             At{" "}
             <Link href="/" className="underline text-white">
-              #,
+              YabaTech PlastoGas Hub,
             </Link>{" "}
-            we are committed to conducting our business in an ethical and honest
-            manner. These conducts are designed to promote a culture of
-            integrity, respect, and professionalism within our company and in
-            our dealings with partners.
+            we are committed to operating with integrity, transparency, and
+            sustainability. Our values promote a culture of responsibility,
+            respect, and professionalism in all our initiatives and
+            collaborations.
           </Text>
         </div>
       </div>

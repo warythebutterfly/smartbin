@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   };
 };
 
-const Team = ({ data, preview, previewToken }: PageProps) => {
+const TeamMembers = ({ data, preview, previewToken }: PageProps) => {
   if (preview && previewToken) {
     return <PreviewTeamPage members={data} />;
   }
@@ -43,4 +43,4 @@ const Team = ({ data, preview, previewToken }: PageProps) => {
   return <TeamView members={data} />;
 };
 
-export default Team;
+export default TeamMembers;

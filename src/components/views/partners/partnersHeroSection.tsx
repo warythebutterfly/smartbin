@@ -24,12 +24,13 @@ const PartnersHeroSection = () => {
                 rel="noreferrer noopener"
                 className="text-primary underline font-medium"
               >
-                # Technologies
+                YabaTech PlastoGas Hub
               </Link>{" "}
-              focuses on building software for internal use, public use and
-              private use. We have helped our partners build and scale their
-              software solutions using bleeding edge technologies while adhering
-              to agreed milestones.
+              focuses on innovative plastic waste management through recycling,
+              upcycling, and smart waste collection technologies. We collaborate
+              with partners to develop and scale sustainable waste solutions,
+              leveraging cutting-edge technology while ensuring efficiency and
+              impact.
             </Text>
 
             <div className="mt-[42px]">

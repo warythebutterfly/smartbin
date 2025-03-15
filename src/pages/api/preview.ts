@@ -13,12 +13,13 @@ const pageMappings: { [key: string]: string } = {
   "/": "/",
   landing: "/",
   team: "/team",
-  investors: "/investors",
+  news: "/news",
   careers: "/careers",
   products: "/products",
   conducts: "/conducts",
   partners: "/partners",
-  "privacy-policy": "/privacy-policy",
+  theapp: "/the-app",
+  //"privacy-policy": "/privacy-policy",
 };
 
 type Keys = keyof typeof pageMappings;

@@ -23,7 +23,7 @@ const Partners = ({ partners }: { partners: Partner[] }) => {
             {partners.map((partner, idx) => (
               <div
                 key={partner._id}
-                className="grayscale relative flex-shrink-0 w-[150px] h-[150px]"
+                className="relative flex-shrink-0 w-[150px] h-[150px]"
               >
                 <Image
                   src={urlForImage(partner.partnerLogo).url()}
