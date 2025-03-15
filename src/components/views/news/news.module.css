@@ -1,36 +1,35 @@
 .portableText {
-    @apply flex flex-col w-full gap-4;
+  @apply flex flex-col w-full gap-4;
 }
-  
-  .portableText p {
-    @apply text-[#D1D5DB] my-3 leading-8;
-  }
-  
-  .portableText li {
-    @apply text-base text-[#374151] leading-9;
-  }
-  
-  .portableText strong {
-    @apply inline-block text-lg text-primary font-semibold leading-6 mb-2;
-  }
-  
-  .portableText ul {
-    @apply text-primary leading-9 ml-4 list-image-dot mb-6 last:mb-0;
-  }
-  
-  .portableText ul li {
-    @apply pl-2;
-  }
-  
-  .portableText a {
-    @apply text-[#374151] font-medium underline;
-  }
-  
-  .vision {
-    @apply text-white text-lg md:text-2xl md:leading-[44px] tracking-[-0.24px];
-  }
-  
-  .mission {
-    @apply text-white font-normal md:leading-[44px] text-xl;
-  }
-  
+
+.portableText p {
+  @apply text-[#D1D5DB] my-3 leading-8;
+}
+
+.portableText li {
+  @apply text-base text-[#374151] leading-9;
+}
+
+.portableText strong {
+  @apply inline-block text-lg text-primary font-semibold leading-6 mb-2;
+}
+
+.portableText ul {
+  @apply text-primary leading-9 ml-4 list-image-dot mb-6 last:mb-0;
+}
+
+.portableText ul li {
+  @apply pl-2;
+}
+
+.portableText a {
+  @apply text-[#374151] font-medium underline;
+}
+
+.vision {
+  @apply text-white text-lg md:text-2xl md:leading-[44px] tracking-[-0.24px];
+}
+
+.mission {
+  @apply text-white font-normal md:leading-[44px] text-xl;
+}
