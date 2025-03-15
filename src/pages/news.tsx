@@ -7,7 +7,7 @@ import {
   getInvestorsData,
   getNewsData,
 } from "~/sanity/lib";
-import InvestorsView from "@/components/views/investors";
+import InvestorsView from "@/components/views/news";
 import { PreviewInvestorsPage } from "@/components/sanity";
 
 interface PageProps {

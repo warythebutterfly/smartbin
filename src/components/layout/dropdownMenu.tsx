@@ -27,6 +27,10 @@ const DropdownMenu = ({
     //   href: "/#vision",
     // },
     {
+      title: "News",
+      href: "/news",
+    },
+    {
       title: "Conducts",
       href: "/conducts",
     },
@@ -82,9 +86,13 @@ const DropdownMenu = ({
             <ul>
               {menus.map((menu) => (
                 <li key={menu.title} className="text-center">
-                  <span className="block px-[10px] py-6 text-primary hover:text-[#06813E] transition-colors text-3xl cursor-not-allowed opacity-50">
+                  <Link
+                    href={menu.href}
+                    onClick={closeDropdown}
+                    className="block px-[10px] py-6 text-primary hover:text-[#06813E] transition-colors text-3xl"
+                  >
                     {menu.title}
-                  </span>
+                  </Link>
                 </li>
               ))}
             </ul>

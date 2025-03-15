@@ -119,8 +119,8 @@ const CareersView = ({
                   {message === "NO_DATA"
                     ? 0
                     : careersData?.length
-                    ? careersData?.length
-                    : "No"}{" "}
+                      ? careersData?.length
+                      : "No"}{" "}
                   opening(s)
                 </p>
               </div>

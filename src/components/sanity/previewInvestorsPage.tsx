@@ -1,6 +1,6 @@
 import { Investor, News, investorsQuery, newsQuery } from "~/sanity/lib";
 import { useLiveQuery } from "next-sanity/preview";
-import InvestorsView from "../views/investors";
+import InvestorsView from "../views/news";
 
 interface Props {
   data: { investorsData: Investor[]; newsData: News[] };

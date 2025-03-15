@@ -6,7 +6,7 @@ import HeroImg from "@/assets/img/hero.svg";
 
 const HeroSection = () => {
   return (
-    <div className="pt-[112px] bg-[#EBF2EF] pb-[66px]">
+    <div className="pt-[112px] bg-[#daffd6] pb-[66px]">
       <div className="wrapper">
         <div className="flex flex-col md:flex-row gap-8 md:gap-0">
           <div className="w-full md:w-1/2">

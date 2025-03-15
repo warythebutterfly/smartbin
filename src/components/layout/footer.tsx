@@ -9,6 +9,10 @@ const Footer = () => {
     //   href: "/#vision",
     // },
     {
+      title: "News",
+      href: "/news",
+    },
+    {
       title: "Conducts",
       href: "/conducts",
     },
@@ -32,10 +36,10 @@ const Footer = () => {
       title: "Team",
       href: "/team",
     },
-    {
-      title: "Privacy Policy and Terms",
-      href: "/privacy-policy",
-    },
+    // {
+    //   title: "Privacy Policy and Terms",
+    //   href: "/privacy-policy",
+    // },
   ];
 
   return (
@@ -49,9 +53,9 @@ const Footer = () => {
           <ul className="flex lg:items-center gap-2 md:gap-4 text-sm font-normal leading-6">
             {menus.map((menu) => (
               <li key={menu.title}>
-                <span className="block px-[10px] lg:py-2 cursor-not-allowed opacity-50">
+                <Link href={menu.href} className="block px-[10px] lg:py-2">
                   {menu.title}
-                </span>
+                </Link>
               </li>
             ))}
           </ul>
