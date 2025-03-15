@@ -54,8 +54,9 @@ const NewsView = ({ data: { newsData } }: InvestorViewProps) => {
                   </Heading>
                 </div>
 
-                <div className="grid grid-cols-4 gap-4">
-                  <div className="col-span-3">
+                <div className="flex flex-col md:flex-row gap-4">
+                  {/* Carousel Section */}
+                  <div className="w-full md:w-3/4">
                     <Carousel
                       showThumbs={false}
                       infiniteLoop={true}
@@ -66,7 +67,7 @@ const NewsView = ({ data: { newsData } }: InvestorViewProps) => {
                             onClick={clickHandler}
                             className="absolute top-1/2 left-4 z-10 p-2 bg-black bg-opacity-10 rounded-full text-[#60B58A] text-2xl"
                           >
-                            ◀ {/* Unicode arrow */}
+                            ◀
                           </button>
                         )
                       }
@@ -76,7 +77,7 @@ const NewsView = ({ data: { newsData } }: InvestorViewProps) => {
                             onClick={clickHandler}
                             className="absolute top-1/2 right-4 z-10 p-2 bg-black bg-opacity-10 rounded-full text-[#60B58A] text-2xl"
                           >
-                            ▶ {/* Unicode arrow */}
+                            ▶
                           </button>
                         )
                       }
@@ -101,8 +102,6 @@ const NewsView = ({ data: { newsData } }: InvestorViewProps) => {
                               </p>
                             </div>
                             <div className="h-[300px] overflow-y-auto">
-                              {" "}
-                              {/* Fixed height & scroll */}
                               <RichText
                                 className={styles.portableText}
                                 content={news?.content}
@@ -113,7 +112,9 @@ const NewsView = ({ data: { newsData } }: InvestorViewProps) => {
                       ))}
                     </Carousel>
                   </div>
-                  <div className="hidden md:block w-full relative">
+
+                  {/* Image Section (Hidden on Small Screens) */}
+                  <div className="hidden md:block md:w-1/4 relative">
                     <Image src={NewsCol} alt="Partners Hero" fill />
                   </div>
                 </div>
