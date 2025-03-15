@@ -92,7 +92,6 @@ const NewsView = ({ data: { newsData } }: InvestorViewProps) => {
                     >
                       {newsData?.map((news) => (
                         <div key={news._id} className="p-4">
-                          <Link href="#">
                             <div className="pb-4 border-b border-b-[#374151] hover:border-b-[#9A4151] transition-colors flex flex-col gap-8">
                               <b className="text-lg text-[#60B58A] leading-8 tracking-[0.27px]">
                                 {news.title}
@@ -111,7 +110,6 @@ const NewsView = ({ data: { newsData } }: InvestorViewProps) => {
                                 content={news?.content}
                               />
                             </div>
-                          </Link>
                         </div>
                       ))}
                     </Carousel>
