@@ -17,7 +17,7 @@ const TeamView = ({ members }: { members: Team[] }) => {
             <div className="mb-20 flex flex-col items-center text-center">
               <Heading className="mb-12 text-2xl md:text-[48px] font-medium leading-9 md:leading-[72px] text-primary">
                 We have a team of dedicated and committed individuals that
-                support our business and partners.
+                support our mission and partners.
               </Heading>
               <div className="flex items-center gap-4">
                 <Link href="/careers">
@@ -56,7 +56,6 @@ const TeamView = ({ members }: { members: Team[] }) => {
                           <Image
                             src={urlForImage(member.avatar).url()}
                             alt={member.name}
-                            className="rounded-full"
                             fill
                           />
                         </div>

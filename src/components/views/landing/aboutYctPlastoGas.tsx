@@ -66,9 +66,7 @@ const AboutYctPlastoGas = ({ data }: { data: Landing["aboutSection"] }) => {
               </Link> */}
 
               <Link href="/partners">
-                <Button className="w-[170px] h-12" disabled>
-                  Become a partner
-                </Button>
+                <Button className="w-[170px] h-12">Become a partner</Button>
               </Link>
             </div>
           </div>

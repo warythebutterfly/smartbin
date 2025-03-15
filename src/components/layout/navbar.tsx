@@ -21,7 +21,7 @@ const Navbar = () => {
 
   const mapBtnColor: Record<string, string> = {
     default: "bg-primary text-white",
-    "/investors": "bg-primary text-white",
+    "/news": "bg-primary text-white",
     "/conducts": "bg-white text-primary font-medium",
     "/conducts/[slug]": "bg-white text-primary font-medium",
     "/partners": "bg-[#2F80ED] text-white",
@@ -32,14 +32,14 @@ const Navbar = () => {
   };
 
   const mapLogoMode: Record<string, "light" | "dark"> = {
-    "/conducts": "light",
-    "/conducts/[slug]": "light",
+    "/conducts": "dark",
+    "/conducts/[slug]": "dark",
     "/partners": isMobile ? "dark" : "light",
   };
 
   const mapBgColor: Record<string, string> = {
-    default: "bg-[#EBF2EF]",
-    "/investors": "bg-white",
+    default: "bg-[#daffd6]",
+    "/news": "bg-white",
     "/conducts": "bg-primary",
     "/conducts/[slug]": "bg-primary",
     "/partners": "bg-transparent",
@@ -66,7 +66,15 @@ const Navbar = () => {
       >
         <nav className="wrapper py-6 flex items-center justify-between">
           <Link href="/">
-            <Logo mode={mapLogoMode[router.pathname] ?? "dark"} />
+            <Logo
+              variant={
+                router.pathname === "/conducts" ||
+                router.pathname === "/conducts/[slug]"
+                  ? "small"
+                  : undefined
+              }
+              mode={mapLogoMode[router.pathname] ?? "dark"}
+            />
           </Link>
           <button
             className="border-none text-black rounded-lg"
@@ -74,8 +82,8 @@ const Navbar = () => {
           >
             <MenuIcon className={`w-8 h-8 ${menuColor}`} />
           </button>
-          {/* <Link href="/investors">
-      <Button className={`w-[107px] ${mapBtnColor[router.pathname]}`}> Investors </Button>
+          {/* <Link href="/news">
+      <Button className={`w-[107px] ${mapBtnColor[router.pathname]}`}> news </Button>
     </Link> */}
         </nav>
       </header>

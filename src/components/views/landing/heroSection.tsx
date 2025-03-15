@@ -15,7 +15,7 @@ const HeroSection = ({ data }: { data: Landing["heroSection"] }) => {
   const toggleShowMoreDetail = () => setShowMoreDetail((open) => !open);
 
   return (
-    <section className="pt-[150px] bg-[#EBF2EF] pb-[66px] bg-right bg-no-repeat">
+    <section className="pt-[150px] bg-[#daffd6] pb-[66px] bg-team bg-right bg-no-repeat">
       <div className="wrapper">
         <div className="flex flex-col md:flex-row gap-8 md:gap-0 items-center">
           <div className="w-full md:w-1/2">

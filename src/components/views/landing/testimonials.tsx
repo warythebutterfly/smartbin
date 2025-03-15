@@ -40,7 +40,7 @@ const Testimonials = ({ data }: { data: Landing["testimonialSection"] }) => {
   ) => (company ? urlForImage(company)?.url() : undefined);
 
   return (
-    <section id="testimonials" className="pt-20 pb-32 bg-[#EBF2EF]">
+    <section id="testimonials" className="pt-20 pb-32 bg-[#daffd6]">
       <div className="mb-20 px-3 max-w-5xl mx-auto">
         <Text className="mb-6 text-[#4B5563] text-center font-normal leading-6">
           What our partners say about us

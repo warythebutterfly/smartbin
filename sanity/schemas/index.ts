@@ -4,7 +4,6 @@ import partnersType from "./partners";
 import conductsType from "./conducts";
 import teamType from "./team";
 import productType from "./product";
-import investorsType from "./investors";
 import newsType from "./news";
 import landingType, {
   aboutSectionType,
@@ -21,7 +20,6 @@ export const schemaTypes = [
   conductsType,
   teamType,
   productType,
-  investorsType,
   newsType,
 
   // Landing page
