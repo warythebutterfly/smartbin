@@ -18,7 +18,7 @@ const LandingView = ({ data }: { data: LandingProps }) => {
         <title>YabaTech PlastoGas Hub</title>
         <meta
           name="description"
-          content="YabaTech PlastoGas Hub is the parent company of YabaTech PlastoGas Hub Technologies which focuses on building software for internal use, public use, and providing software service for its partners."
+          content="Join us in creating a cleaner, greener future with our sustainable solutions, advanced smart bins, and community-focused training programs. Together, we can transform plastic waste into valuable resources for a sustainable tomorrow."
         />
       </Head>
       <HeroSection data={data?.heroSection} />
