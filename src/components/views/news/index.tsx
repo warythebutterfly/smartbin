@@ -101,7 +101,11 @@ const NewsView = ({ data: { newsData } }: InvestorViewProps) => {
                                 {news.publishedAt}
                               </p>
                             </div>
-                            <div className="h-[300px] overflow-y-auto">
+                            <div
+                              className="h-[300px] overflow-y-auto"
+                              onTouchStart={(e) => e.stopPropagation()}
+                              onPointerDown={(e) => e.stopPropagation()}
+                            >
                               <RichText
                                 className={styles.portableText}
                                 content={news?.content}
