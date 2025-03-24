@@ -92,6 +92,7 @@ const newsFields = groq`
   excerpt,
   publishedAt,
   content,
+  "images": newsImages[].asset->url,
   _createdAt
 `;
 
@@ -249,6 +250,7 @@ export interface News {
   publishedAt: string;
   content: any;
   _createdAt: string;
+  newsImages: any;
 }
 
 export interface PrivacyPolicy {
