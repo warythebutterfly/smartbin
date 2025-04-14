@@ -5,7 +5,7 @@ import { cn } from "@/utils/helpers";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
   full?: boolean;
-  variant?: "primary" | "outline" | "ghost";
+  variant?: "primary" | "secondary" | "outline" | "ghost";
   leftIcon?: ReactNode;
 }
 
@@ -32,6 +32,23 @@ export const Button = ({
       <button
         className={cn(
           `w-full h-10 px-6 rounded-full bg-primary text-white text-sm flex items-center justify-center font-normal cursor-pointer ${
+            disabled ? "disabled:opacity-50" : null
+          }`,
+          className,
+        )}
+        {...rest}
+        disabled={disabled}
+      >
+        {!leftIcon ? contentWithoutIcon : contentWithIcon}
+      </button>
+    );
+  }
+
+  if (variant === "secondary") {
+    return (
+      <button
+        className={cn(
+          `w-full h-10 px-6 rounded-full bg-secondary text-white text-sm flex items-center justify-center font-normal cursor-pointer ${
             disabled ? "disabled:opacity-50" : null
           }`,
           className,

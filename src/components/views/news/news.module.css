@@ -28,7 +28,7 @@
 
 /* Change color of active dot */
 .carousel .control-dots .dot {
-  background-color: #60B58A !important; /* Your desired color */
+  background-color: #60b58a !important; /* Your desired color */
 }
 
 /* Change color of inactive dots */

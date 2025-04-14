@@ -40,7 +40,7 @@ const ProductListings = ({ products }: { products: Product[] }) => {
               ) : null}
 
               <div className="flex flex-col gap-8 w-full md:w-1/2">
-                <Heading className="text-[40px] text-[#9A4151] leading-[64px]">
+                <Heading className="text-[40px] text-[#1F2937] leading-[64px]">
                   {product.name}
                 </Heading>
 

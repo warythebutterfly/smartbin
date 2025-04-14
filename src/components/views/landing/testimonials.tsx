@@ -50,7 +50,7 @@ const Testimonials = ({ data }: { data: Landing["testimonialSection"] }) => {
           className="text-lg md:text-4xl font-normal md:leading-[56px] text-center"
         >
           As we
-          <span className="text-[#9A4151]">
+          <span className="text-[#1F2937]">
             {" "}
             advance into the future through strategic partnerships
           </span>

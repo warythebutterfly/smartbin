@@ -14,20 +14,28 @@ const VisionMission = ({ data }: { data: Landing["visionSection"] }) => {
           >
             OUR VISION, MISSION AND
           </Heading>
-          <Heading className="text-4xl md:text-[64px] font-bold md:leading-[88px] tracking-[1.6px] text-[#60B58A]">
-            VALUES
+          <Heading className="text-4xl md:text-[64px] font-bold md:leading-[88px] tracking-[1.6px]">
+            <span className="bg-gradient-to-br from-[#2DBE60] via-[#003464] to-[#2DBE60] bg-clip-text text-transparent">
+              VALUES
+            </span>
           </Heading>
         </div>
 
-        <div className="flex flex-col flex-1 md:flex-row justify-center mt-[8rem]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-32 px-4 md:px-16">
+          {/* Vision Card */}
           <div
-            className="v-content bg-no-repeat bg-cover bg-center p-4 md:p-8 w-full md:w-1/2 z-[2] relative hover:scale-[1.1] hover:z-[2] transition-transform duration-700"
-            style={{ backgroundImage: "url(/img/mission.png)" }}
+            className="relative group rounded-2xl overflow-hidden transition-transform duration-700 transform hover:scale-[1.03] shadow-lg"
+            style={{
+              backgroundImage: "url(/img/mission.png)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
           >
-            <div className="p-6 bg-[rgba(0,1,3,0.90)]">
+            <div className="absolute inset-0 bg-[rgba(0,52,100,0.85)] group-hover:bg-[rgba(0,52,100,0.9)] transition-colors duration-700 z-10"></div>
+            <div className="relative z-20 p-6 md:p-10 text-white">
               <Heading
                 as="h6"
-                className="text-white mb-8 font-bold text-2xl md:text-[56px] md:leading-[80px] tracking-[1.4px]"
+                className="text-white font-bold text-3xl md:text-[48px] leading-tight tracking-wide mb-6"
               >
                 Our Vision
               </Heading>
@@ -35,14 +43,20 @@ const VisionMission = ({ data }: { data: Landing["visionSection"] }) => {
             </div>
           </div>
 
+          {/* Mission Card */}
           <div
-            className="m-content group bg-no-repeat bg-cover bg-center p-4 md:p-8 w-full md:w-1/2 z-[1] relative hover:scale-[1.1] hover:z-[2] transition-transform duration-700"
-            style={{ backgroundImage: "url(/img/vision.png)" }}
+            className="relative group rounded-2xl overflow-hidden transition-transform duration-700 transform hover:scale-[1.03] shadow-lg"
+            style={{
+              backgroundImage: "url(/img/vision.png)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
           >
-            <div className="p-6 bg-[rgba(0,1,3,0.90)]">
+            <div className="absolute inset-0 bg-[rgba(0,52,100,0.85)] group-hover:bg-[rgba(0,52,100,0.9)] transition-colors duration-700 z-10"></div>
+            <div className="relative z-20 p-6 md:p-10 text-white">
               <Heading
                 as="h6"
-                className="text-white mb-8 font-bold text-2xl md:text-[56px] md:leading-[80px] tracking-[1.4px]"
+                className="text-white font-bold text-3xl md:text-[48px] leading-tight tracking-wide mb-6"
               >
                 Our Mission
               </Heading>

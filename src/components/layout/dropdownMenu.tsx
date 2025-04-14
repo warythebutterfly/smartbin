@@ -60,7 +60,7 @@ const DropdownMenu = ({
     },
     {
       title: "Our app",
-      href: "/",
+      href: "https://bine.yctplastogashub.com",
     },
   ];
 

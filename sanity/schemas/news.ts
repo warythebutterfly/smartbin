@@ -32,7 +32,7 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: "newsImages",
+      name: "images",
       title: "News Images",
       type: "array",
       of: [
@@ -43,6 +43,12 @@ export default defineType({
           },
         },
       ],
+    }),
+    defineField({
+      name: "youtubeLinks",
+      title: "YouTube Links",
+      type: "array",
+      of: [{ type: "url" }],
     }),
   ],
 });

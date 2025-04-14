@@ -5,40 +5,35 @@ import { Partner, urlForImage } from "~/sanity/lib";
 
 const PartnersGrid = ({ data }: { data: Partner[] }) => {
   return (
-    <div className="">
-      <div className="mb-12 pt-10 wrapper">
-        <Heading className="text-4xl text-primary tracking-[-0.32px]">
+    <section className="py-16 px-4 md:px-12">
+      <div className="text-center mb-12">
+        <Heading className="text-4xl font-bold text-primary tracking-tight mb-2">
           Partners
         </Heading>
-        <hr className="w-16 h-[2px] bg-[#2F80ED]" />
+        <div className="w-20 h-1 bg-gradient-to-r from-[#2DBE60] via-[#003464] to-[#2DBE60] rounded-full mx-auto" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-[1440px] mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
         {data?.map((partner) => (
           <div
             key={partner._id}
-            className="partner-item px-[42px] pt-16 pb-[49px] relative border-b border-b-[#E5E7EB] border-r border-r-[#E5E7EB]"
+            className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center transition-transform hover:scale-[1.03] duration-300"
           >
-            <span className="w-6 h-6 rounded-full bg-[#F3F4F6] absolute top-6 left-10 "></span>
-
-            <div className="flex flex-col justify-center items-center gap-8">
-              <div className="flex justify-center relative w-full h-[100px]">
-                <Image
-                  src={urlForImage(partner.partnerLogo).url()}
-                  alt={partner.partnerLogoAlt}
-                  className="object-contain"
-                  fill
-                />
-              </div>
-
-              <Text className="text-[#4B5563] text-center leading-6">
-                {partner.description}
-              </Text>
+            <div className="w-full h-24 relative mb-6">
+              <Image
+                src={urlForImage(partner.partnerLogo).url()}
+                alt={partner.partnerLogoAlt}
+                className="object-contain"
+                fill
+              />
             </div>
+            <Text className="text-gray-600 leading-6">
+              {partner.description}
+            </Text>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

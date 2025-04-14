@@ -20,7 +20,7 @@ const AboutYctPlastoGas = ({ data }: { data: Landing["aboutSection"] }) => {
             className="text-xl md:text-[40px] font-normal md:leading-[56px] text-center"
           >
             Our mission is “to revolutionize
-            <span className="text-[#9A4151]"> plastic waste management </span>
+            <span className="text-[#2DBE60]"> plastic waste management </span>
             through innovative technologies, community empowerment, and
             sustainable practices, creating a cleaner and greener future”.
           </Heading>
@@ -66,7 +66,9 @@ const AboutYctPlastoGas = ({ data }: { data: Landing["aboutSection"] }) => {
               </Link> */}
 
               <Link href="/partners">
-                <Button className="w-[170px] h-12">Become a partner</Button>
+                <Button className="w-[170px] h-12 bg-[#2DBE60]">
+                  Become a partner
+                </Button>
               </Link>
             </div>
           </div>

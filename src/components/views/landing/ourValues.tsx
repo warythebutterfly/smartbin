@@ -47,53 +47,51 @@ const OurValues = () => {
   ];
 
   return (
-    <section id="values" className="pt-[80px] pb-[96px] bg-[#010206]">
-      <div className="wrapper">
-        <div className="mb-12 w-full max-w-[780px]">
-          <Heading
-            as="h4"
-            className="text-white text-4xl md:text-[64px] font-semibold leading-[80px] tracking-[1.6px] mb-6"
-          >
-            Our Values
-          </Heading>
-          <Text
-            className={`${jost.className} text-lg text-[#E5E7EB] leading-[30px] tracking-[0.36px]`}
-          >
-            Our values as a waste management initiative are deeply
-            aligned with our mission, vision and overall strategy. They guide
-            our decision-making, shape our culture, and contribute to its
-            overall success. Although we cannot include all positive values, we
-            strive to ensure our culture and partners align with positive values
-            that propels us forward.
-          </Text>
-        </div>
+    <section id="values" className="bg-[#010206] py-24 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto text-center mb-20">
+        <Heading
+          as="h4"
+          className="text-white text-4xl md:text-6xl font-semibold leading-tight mb-6"
+        >
+          Our Values
+        </Heading>
+        <div className="w-16 h-1 bg-gradient-to-r from-[#2DBE60] via-[#003464] to-[#2DBE60] mx-auto rounded-full mb-6" />
+        <Text
+          className={`${jost.className} text-lg text-[#E5E7EB] max-w-3xl mx-auto leading-8`}
+        >
+          As a waste management initiative, our values drive decisions, shape
+          culture, and align with our mission for a cleaner, greener planet. We
+          focus on principles that fuel long-term, meaningful impact.
+        </Text>
+      </div>
 
-        <div>
-          {values.map((value) => (
-            <div
-              key={value.title}
-              className="px-4 md:px-12 pt-7 md:pt-14 pb-8 md:pb-16 border-b border-b-[#1F2937] flex flex-col md:flex-row md:items-center gap-6 md:gap-[123px]"
-            >
-              <div className="bg-primary rounded-xl w-full max-w-[120px] h-[120px] flex justify-center items-center text-white text-6xl font-semibold">
+      <div className="grid gap-12 md:grid-cols-2">
+        {values.map((value) => (
+          <div
+            key={value.title}
+            className="flex items-start gap-6 p-6 md:p-10 bg-primary rounded-2xl border border-primary hover:shadow-xl transition-shadow duration-300"
+          >
+            <div className="flex-shrink-0">
+              <div className="w-[100px] h-[100px] rounded-full bg-gradient-to-br from-[#2DBE60] via-[#003464] to-[#2DBE60] flex items-center justify-center text-white text-4xl font-bold shadow-md shadow-[#2DBE6055]">
                 {value.short}
               </div>
-
-              <div>
-                <Heading
-                  as="h5"
-                  className="mb-5 text-xl md:text-[40px] text-white leading-[56px] font-semibold tracking-[1px]"
-                >
-                  {value.title}
-                </Heading>
-                <Text
-                  className={`${jost.className} text-base md:text-lg text-[#D1D5DB] leading-[30px] tracking-[0.32px]`}
-                >
-                  {value.description}
-                </Text>
-              </div>
             </div>
-          ))}
-        </div>
+
+            <div className="text-left">
+              <Heading
+                as="h5"
+                className="text-2xl md:text-[32px] text-white font-semibold mb-4 leading-snug"
+              >
+                {value.title}
+              </Heading>
+              <Text
+                className={`${jost.className} text-base text-[#D1D5DB] leading-7`}
+              >
+                {value.description}
+              </Text>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

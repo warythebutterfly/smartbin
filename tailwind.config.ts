@@ -21,11 +21,12 @@ const config: Config = {
       },
     },
     fontFamily: {
-      sans: ["DM Sans", ...defaultTheme.fontFamily.sans],
+      sans: ["Manrope", ...defaultTheme.fontFamily.sans],
     },
     colors: {
       ...colors,
-      primary: "#252422",
+      primary: "#003464",
+      secondary: "#2DBE60",
     },
   },
   plugins: [],

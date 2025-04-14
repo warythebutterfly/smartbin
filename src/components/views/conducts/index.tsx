@@ -16,10 +16,10 @@ const ConductsView = ({ data }: { data: Conduct[] }) => {
           <div className="wrapper">
             <div className="px-4 md:px-10">
               <div className="mb-12">
-                <Heading className="text-4xl text-primary tracking-[-0.32px]">
+                <Heading className="text-4xl text-primary tracking-[-0.32px] mb-4">
                   Our Conducts
                 </Heading>
-                <hr className="w-16 h-[2px] bg-[#2F80ED]" />
+                <div className="w-20 h-1 bg-gradient-to-r from-[#2DBE60] via-[#003464] to-[#2DBE60] rounded-full" />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[26px]">
