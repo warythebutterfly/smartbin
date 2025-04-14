@@ -31,5 +31,24 @@ export default defineType({
       of: [{ type: "block" }],
       validation: (rule) => rule.required(),
     }),
+    defineField({
+      name: "images",
+      title: "News Images",
+      type: "array",
+      of: [
+        {
+          type: "image",
+          options: {
+            hotspot: true,
+          },
+        },
+      ],
+    }),
+    defineField({
+      name: "youtubeLinks",
+      title: "YouTube Links",
+      type: "array",
+      of: [{ type: "url" }],
+    }),
   ],
 });

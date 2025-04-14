@@ -20,7 +20,7 @@ const HeroSection = ({ data }: { data: Landing["heroSection"] }) => {
         <div className="flex flex-col md:flex-row gap-8 md:gap-0 items-center">
           <div className="w-full md:w-1/2">
             <div className="">
-              <Heading className="text-4xl md:text-[66px] mb-6 font-semibold md:leading-[72px] tracking-[-0.66px]">
+              <Heading className="text-4xl text-[#2DBE60] md:text-[66px] mb-6 font-semibold md:leading-[72px] tracking-[-0.66px]">
                 {data?.title}
               </Heading>
 

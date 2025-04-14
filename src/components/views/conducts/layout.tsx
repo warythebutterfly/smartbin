@@ -30,7 +30,7 @@ const ConductsLayout = ({ children }: { children: ReactNode }) => {
           className="absolute top-0 left-0 right-0 z-[5] h-[150px] md:h-[329px]"
           style={{
             background:
-              "linear-gradient(180deg, #252422 11.09%, rgba(37, 36, 34, 0.00) 100%)",
+              "linear-gradient(180deg, #003464 11.09%, rgba(37, 36, 34, 0.00) 100%)",
           }}
         ></div>
         <Image

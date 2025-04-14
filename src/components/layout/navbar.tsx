@@ -27,7 +27,7 @@ const Navbar = () => {
     "/partners": "bg-[#2F80ED] text-white",
     "/terms": "bg-[#AA916A]",
     "/privacy-policy": "bg-[#AA916A]",
-    "/team": "bg-[#9A4151]",
+    "/team": "bg-[#1F2937]",
     "/careers": "bg-[#06813E]",
   };
 
@@ -66,15 +66,7 @@ const Navbar = () => {
       >
         <nav className="wrapper py-6 flex items-center justify-between">
           <Link href="/">
-            <Logo
-              variant={
-                router.pathname === "/conducts" ||
-                router.pathname === "/conducts/[slug]"
-                  ? "small"
-                  : undefined
-              }
-              mode={mapLogoMode[router.pathname] ?? "dark"}
-            />
+            <Logo />
           </Link>
           <button
             className="border-none text-black rounded-lg"

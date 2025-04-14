@@ -11,74 +11,71 @@ const TeamView = ({ members }: { members: Team[] }) => {
       <Head>
         <title>Team | YabaTech PlastoGas Hub</title>
       </Head>
-      <section className="pt-[96px] pb-[172px] bg-team bg-right bg-no-repeat">
+
+      <section className="pt-28 pb-36 bg-gradient-to-br from-[#F9FAFB] to-[#EEF2F6]">
         <div className="wrapper">
-          <div className="w-full max-w-[1067px] mx-auto px-0 md:px-8">
-            <div className="mb-20 flex flex-col items-center text-center">
-              <Heading className="mb-12 text-2xl md:text-[48px] font-medium leading-9 md:leading-[72px] text-primary">
-                We have a team of dedicated and committed individuals that
-                support our mission and partners.
-              </Heading>
-              <div className="flex items-center gap-4">
-                <Link href="/careers">
-                  <Button variant="primary" className="w-fit h-12">
-                    Join our team
-                  </Button>
-                </Link>
-                <Link href="/partners">
-                  <Button
-                    variant="outline"
-                    className="w-fit h-12 border-[#D1D5DB] text-primary"
-                  >
-                    Become a partner
-                  </Button>
-                </Link>
+          {/* Intro */}
+          <div className="max-w-4xl mx-auto text-center mb-20">
+            <Heading className="text-3xl md:text-5xl font-bold text-primary leading-tight mb-8">
+              Meet Our Team
+            </Heading>
+            <p className="text-[#4B5563] text-lg leading-7">
+              A team of dedicated and committed individuals supporting our
+              mission and partners across all projects.
+            </p>
+
+            <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+              <Link href="/careers">
+                <Button variant="secondary" className="h-12 px-6">
+                  Join our team
+                </Button>
+              </Link>
+              <Link href="/partners">
+                <Button
+                  variant="outline"
+                  className="h-12 px-6 border-[#D1D5DB] text-primary"
+                >
+                  Become a partner
+                </Button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Team Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+            {members?.length === 0 ? (
+              <div className="col-span-full text-center text-xl font-medium text-gray-500">
+                No Data!
               </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-3xl mx-auto">
-              {members?.length === 0 ? (
-                <h3 className="col-span-full py-10 text-center text-2xl font-medium leading-6">
-                  No Data!
-                </h3>
-              ) : (
-                members?.map((member) => (
-                  <div key={member._id}>
-                    <div
-                      className="py-[29px] bg-white flex flex-col gap-[18.17px] items-center h-[273px]"
-                      style={{
-                        boxShadow:
-                          "3.30333px 12.3875px 26.42666px 1.65167px rgba(30, 30, 30, 0.08)",
-                      }}
-                    >
-                      {member?.avatar ? (
-                        <div className="w-[153px] h-[153px] relative">
-                          <Image
-                            src={urlForImage(member.avatar).url()}
-                            alt={member.name}
-                            fill
-                          />
-                        </div>
-                      ) : null}
-
-                      <div className="text-center">
-                        {member?.name ? (
-                          <p className="text-primary font-semibold">
-                            {member.name}
-                          </p>
-                        ) : null}
-
-                        {member?.position ? (
-                          <p className="text-[#9CA3AF] text-sm">
-                            {member.position}
-                          </p>
-                        ) : null}
-                      </div>
+            ) : (
+              members.map((member) => (
+                <div
+                  key={member._id}
+                  className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center px-6 py-10 text-center"
+                >
+                  {member?.avatar && (
+                    <div className="w-[140px] h-[140px] rounded-full overflow-hidden relative mb-6">
+                      <Image
+                        src={urlForImage(member.avatar).url()}
+                        alt={member.name}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                  </div>
-                ))
-              )}
-            </div>
+                  )}
+
+                  {member?.name && (
+                    <p className="text-primary text-xl font-semibold mb-1">
+                      {member.name}
+                    </p>
+                  )}
+
+                  {member?.position && (
+                    <p className="text-[#6B7280] text-sm">{member.position}</p>
+                  )}
+                </div>
+              ))
+            )}
           </div>
         </div>
       </section>

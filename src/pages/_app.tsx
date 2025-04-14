@@ -2,16 +2,18 @@ import { Fragment } from "react";
 import Script from "next/script";
 import { useRouter } from "next/router";
 import Layout from "@/components/layout";
-import { DM_Sans } from "next/font/google";
+import { Manrope } from "next/font/google";
 import type { AppProps } from "next/app";
 import { ExitPreviewButton, PreviewProvider } from "@/components/sanity";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export interface SharedPageProps {
   preview: boolean;
   previewToken: string;
 }
 
-const dmSans = DM_Sans({ subsets: ["latin"] });
+const manrope = Manrope({ subsets: ["latin"] });
 
 import "@/styles/globals.css";
 
@@ -35,7 +37,7 @@ export default function App({
       <style jsx global>
         {`
           :root {
-            --font-inter: ${dmSans.style.fontFamily};
+            --font-sans: ${manrope.style.fontFamily};
           }
         `}
       </style>

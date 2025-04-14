@@ -43,11 +43,11 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#252422] flex items-center justify-between pt-8 lg:pt-0">
+    <footer className="bg-[#003464] flex items-center justify-between pt-8 lg:pt-0">
       <nav className="wrapper py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-4 lg:gap-0">
         <div className="flex flex-col w-full lg:flex-row lg:items-center gap-8 lg:gap-16 text-white">
           <Link href="/" className="pl-[10px] lg:pl-0">
-            <Logo variant="small" />
+            <Logo />
           </Link>
 
           <ul className="flex lg:items-center gap-2 md:gap-4 text-sm font-normal leading-6">
