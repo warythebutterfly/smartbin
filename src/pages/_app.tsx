@@ -41,6 +41,28 @@ export default function App({
           }
         `}
       </style>
+
+      {preview && previewToken ? (
+        <PreviewProvider previewToken={previewToken}>
+          {page}
+          <ExitPreviewButton />
+        </PreviewProvider>
+      ) : (
+        page
+      )}
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-786HQKFBXZ"
+      ></Script>
+      <Script id="load-gtag">
+        {`  
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-786HQKFBXZ');
+        `}
+      </Script>
     </Fragment>
   );
 }
