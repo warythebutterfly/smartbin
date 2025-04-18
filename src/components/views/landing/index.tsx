@@ -24,7 +24,7 @@ const LandingView = ({ data }: { data: LandingProps }) => {
       <HeroSection data={data?.heroSection} />
       <AboutYctPlastoGas data={data?.aboutSection} />
       <VisionMission data={data?.visionSection} />
-      <OurValues />
+      {/* <OurValues /> */}
       {data?.testimonialSection?.length ? (
         <Testimonials data={data?.testimonialSection} />
       ) : null}

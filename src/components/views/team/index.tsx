@@ -19,24 +19,19 @@ const TeamView = ({ members }: { members: Team[] }) => {
             <Heading className="text-3xl md:text-5xl font-bold text-primary leading-tight mb-8">
               Meet Our Team
             </Heading>
-            <p className="text-[#4B5563] text-lg leading-7">
+            <p className="text-[#374151] text-lg leading-7">
               A team of dedicated and committed individuals supporting our
               mission and partners across all projects.
             </p>
 
-            <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/careers">
-                <Button variant="secondary" className="h-12 px-6">
-                  Join our team
-                </Button>
-              </Link>
-              <Link href="/partners">
-                <Button
-                  variant="outline"
-                  className="h-12 px-6 border-[#D1D5DB] text-primary"
-                >
-                  Become a partner
-                </Button>
+            <div className="relative inline-flex items-center justify-center sm:mt-12 group">
+              <div className="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-[#003464] to-[#2DBE60] group-hover:shadow-lg group-hover:shadow-green-500/50"></div>
+              <Link
+                href="/partners"
+                className="relative inline-flex items-center justify-center px-8 py-3 text-base font-normal text-white bg-primary border border-transparent rounded-full"
+                role="button"
+              >
+                Explore Partnerships
               </Link>
             </div>
           </div>
@@ -71,7 +66,7 @@ const TeamView = ({ members }: { members: Team[] }) => {
                   )}
 
                   {member?.position && (
-                    <p className="text-[#6B7280] text-sm">{member.position}</p>
+                    <p className="text-[#374151] text-sm">{member.position}</p>
                   )}
                 </div>
               ))

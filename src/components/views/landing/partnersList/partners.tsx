@@ -18,23 +18,27 @@ const Partners = ({ partners }: { partners: Partner[] }) => {
   return (
     <>
       {condition ? (
-        <div className="overflow-x-auto flex-1 pb-2">
-          <div className="flex gap-4 md:gap-8">
-            {partners.map((partner, idx) => (
-              <div
-                key={partner._id}
-                className="relative flex-shrink-0 w-[150px] h-[150px]"
-              >
+        <div className="mt-8 lg:mt-12 lg:flex lg:items-center">
+          <div className="flex justify-center flex-shrink-0 -space-x-4 overflow-hidden lg:justify-start">
+            {partners.slice(0, 4).map((partner, idx) => (
+              <div key={partner._id} className="">
                 <Image
                   src={urlForImage(partner.partnerLogo).url()}
                   alt={partner.partnerLogoAlt}
-                  className="object-contain"
+                  className="inline-block rounded-full w-20 h-20 ring-2 ring-white"
+                  width={20}
+                  height={20}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  fill
                 />
               </div>
             ))}
           </div>
+          <p className="mt-4 text-lg text-primary lg:mt-0 lg:ml-4 font-pj">
+            Join with{" "}
+            <span className="font-bold">{partners.length}+ partners</span> and
+            start promoting awareness to drive sustainable waste management
+            behaviours right now
+          </p>
         </div>
       ) : (
         <Carousel partners={partners} />

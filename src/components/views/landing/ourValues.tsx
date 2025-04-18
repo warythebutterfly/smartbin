@@ -7,6 +7,20 @@ const jost = Jost({
   display: "swap",
 });
 
+export const ValueItem = ({ value }: { value: any }) => (
+  <div className="bg-white shadow-xl rounded-xl hover:-translate-y-1 duration-500 h-full p-6 lg:p-8">
+    <div className="flex-shrink-0">
+      <div className="w-[100px] h-[100px] rounded-full bg-gradient-to-br from-[#2DBE60] via-[#003464] to-[#2DBE60] flex items-center justify-center text-white text-4xl font-bold shadow-md shadow-[#2DBE6055]">
+        {value.short}
+      </div>
+    </div>
+    <div className="mt-6">
+      <h4 className="text-2xl text-primary font-medium mb-1">{value.title}</h4>
+      <p className="opacity-70 text-[#374151]">{value.description}</p>
+    </div>
+  </div>
+);
+
 const OurValues = () => {
   const values = [
     {
@@ -16,13 +30,13 @@ const OurValues = () => {
       img: "",
       short: "S",
     },
-    {
-      title: "Innovation",
-      description:
-        "At YabaTech PlastoGas Hub, we believe in leveraging cutting-edge technologies and creative problem-solving to transform plastic waste into valuable resources and energy.",
-      img: "",
-      short: "I",
-    },
+    // {
+    //   title: "Innovation",
+    //   description:
+    //     "At YabaTech PlastoGas Hub, we believe in leveraging cutting-edge technologies and creative problem-solving to transform plastic waste into valuable resources and energy.",
+    //   img: "",
+    //   short: "I",
+    // },
     {
       title: "Community Empowerment",
       description:
@@ -65,31 +79,10 @@ const OurValues = () => {
         </Text>
       </div>
 
-      <div className="grid gap-12 md:grid-cols-2">
-        {values.map((value) => (
-          <div
-            key={value.title}
-            className="flex items-start gap-6 p-6 md:p-10 bg-primary rounded-2xl border border-primary hover:shadow-xl transition-shadow duration-300"
-          >
-            <div className="flex-shrink-0">
-              <div className="w-[100px] h-[100px] rounded-full bg-gradient-to-br from-[#2DBE60] via-[#003464] to-[#2DBE60] flex items-center justify-center text-white text-4xl font-bold shadow-md shadow-[#2DBE6055]">
-                {value.short}
-              </div>
-            </div>
-
-            <div className="text-left">
-              <Heading
-                as="h5"
-                className="text-2xl md:text-[32px] text-white font-semibold mb-4 leading-snug"
-              >
-                {value.title}
-              </Heading>
-              <Text
-                className={`${jost.className} text-base text-[#D1D5DB] leading-7`}
-              >
-                {value.description}
-              </Text>
-            </div>
+      <div className="grid grid-cols-4 gap-6 text-center pt-6">
+        {values.map((value, i) => (
+          <div className="col-span-4 md:col-span-2 lg:col-span-1" key={i}>
+            <ValueItem value={value} />
           </div>
         ))}
       </div>
