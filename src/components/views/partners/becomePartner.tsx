@@ -4,7 +4,13 @@ import { Jost } from "next/font/google";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ContactFormFields, contactFormSchema } from "@/utils/validationSchema";
-import { CheckIcon } from "@/components/icons";
+import {
+  CheckIcon,
+  EnvelopeIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  PhoneIcon,
+} from "@/components/icons";
 import contactFormEmailTemplate from "@/templates/contactForm";
 
 const jost = Jost({ subsets: ["latin"] });
@@ -19,7 +25,7 @@ interface FormInputs {
   message: string;
 }
 
-const BecomePartner = () => {
+const BecomePartnerOld = () => {
   const [isSubmmitting, setIsSubmmitting] = useState(false);
   const [isContactFormSubmitted, setIsContactFormSubmitted] = useState(false);
 
@@ -275,7 +281,7 @@ const BecomePartner = () => {
     //     </div>
     //   </div>
     // </div>
-    <section className="bg-[#F9FAFB] py-24 px-6 md:px-12">
+    <section className="bg-[#F9FAFB] py-24 px-6 md:px-12" id="partner">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         {/* Info Panel */}
         <div className="flex flex-col justify-center">
@@ -370,4 +376,194 @@ const BecomePartner = () => {
   );
 };
 
+const contactInfoList = [
+  {
+    icon: <EnvelopeIcon />,
+    label: "yctplastogashub@gmail.com",
+    href: "mailto:yctplastogashub@gmail.com",
+  },
+  {
+    icon: <PhoneIcon />,
+    label: "+234 818 396 4263",
+    href: "callto:+234 8183964263",
+  },
+  {
+    icon: <LinkedinIcon />,
+    label: "Yct PlastoGas Hub",
+    href: "https://www.linkedin.com/company/#/",
+  },
+  {
+    icon: <InstagramIcon />,
+    label: "@yctplastogashub",
+    href: "https://instagram.com/#",
+  },
+];
+
+const ContactForm = () => {
+  const [isSubmmitting, setIsSubmmitting] = useState(false);
+  const [isContactFormSubmitted, setIsContactFormSubmitted] = useState(false);
+
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ContactFormFields>({
+    resolver: yupResolver(contactFormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      city: "",
+      country: "",
+      subject: "",
+      message: "",
+    },
+  });
+
+  const onSubmit = async (data: ContactFormFields) => {
+    setIsSubmmitting(true);
+    setIsContactFormSubmitted(false);
+    try {
+      const emailTemplate = contactFormEmailTemplate(
+        data.name,
+        data.email,
+        data.country,
+        data.city,
+        data.phone,
+        data.subject,
+        data.message,
+      );
+
+      const response = await fetch("/api/mailService", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(emailTemplate),
+      });
+
+      if (response.ok) setIsContactFormSubmitted(true);
+      setIsSubmmitting(false);
+    } catch (error) {
+      console.log(error);
+      setIsSubmmitting(false);
+    }
+  };
+
+  return (
+    <div className="">
+      {isContactFormSubmitted ? (
+        <div className="text-center py-10">
+          <Heading
+            as="h3"
+            className="text-2xl text-zinc-900 dark:text-white mb-4 flex items-center justify-center gap-4"
+          >
+            Thank You! <CheckIcon />
+          </Heading>
+          <p className="text-zinc-900 dark:text-white">
+            Your message has been submitted. We&apos;ll get back to you soon.
+          </p>
+        </div>
+      ) : (
+        <form className="" onSubmit={handleSubmit(onSubmit)}>
+          {[
+            { name: "name", placeholder: "Enter Name*" },
+            { name: "email", placeholder: "Enter Email Address*" },
+            { name: "country", placeholder: "Enter Country*" },
+            { name: "city", placeholder: "Enter City*" },
+            { name: "phone", placeholder: "Enter Phone Number*" },
+            { name: "subject", placeholder: "Enter Subject*" },
+            { name: "message", placeholder: "Enter Message*" },
+          ].map(({ name, placeholder }) => (
+            <div key={name} className="mb-4">
+              <Label>
+                <Controller
+                  name={name as keyof FormInputs}
+                  control={control}
+                  render={({ field }) => (
+                    <Input
+                      type="text"
+                      placeholder={placeholder}
+                      errorMsg={errors[name as keyof FormInputs]?.message}
+                      {...field}
+                      className="min-h-[48px] leading-[48px] bg-[#F2F6FD] dark:bg-[#2A384C] border border-transparent rounded-xl focus:outline-none focus:border focus:border-[#86b7fe] w-full px-5"
+                    />
+                  )}
+                />
+              </Label>
+            </div>
+          ))}
+          <div className="text-start">
+            <Button
+              type="submit"
+              className="bg-secondary hover:bg-opacity-90 text-white px-8 py-3 rounded-full mb-4"
+            >
+              {isSubmmitting ? "..." : "Submit"}
+            </Button>
+          </div>
+        </form>
+      )}
+    </div>
+  );
+};
+
+const ContactFormCard = () => (
+  <div className="bg-white dark:bg-[#162231] shadow-xl rounded-2xl p-6 md:p-12">
+    <h2 className="text-2xl md:text-[45px] leading-none font-bold mb-4">
+      Contact Us
+    </h2>
+    {/* <p className="text-lg mb-12">
+      We list your menu online, help you process orders.
+    </p> */}
+
+    <ContactForm />
+  </div>
+);
+
+const ContactInfo = ({ contactInfoList }: { contactInfoList: any[] }) => (
+  <div className="mt-5 pt-md-4">
+    {contactInfoList.map((info, i) => (
+      <div
+        className="bg-gray-100 shadow dark:bg-gray-800 max-w-[350px] mt-6 flex items-center rounded-xl p-5"
+        key={i}
+      >
+        {info.icon}
+        <i className="fas fa-envelope-open-text text-3xl px-2"></i>
+        <a className="text-lg font-medium ml-4" href={info.href || "#!"}>
+          {info.label}
+        </a>
+      </div>
+    ))}
+  </div>
+);
+
+const BecomePartner = () => {
+  return (
+    <section
+      className="ezy__contact9 py-14 md:py-24 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white overflow-hidden"
+      id="partner"
+    >
+      <div className="container px-6 mx-auto sm:px-8 lg:px-12 max-w-7xl mt-10">
+        <div className="grid grid-cols-12 py-6 lg:gap-8">
+          <div className="col-span-12 lg:col-span-6 mb-12 lg:mb-0">
+            <h2 className="text-2xl leading-none md:text-[45px] font-bold mb-6">
+              Become a partner
+            </h2>
+
+            <p className={`font-normal leading-8`}>
+              Join us in redefining the future of sustainable plastic
+              management. Together, we can create smart, scalable solutions that
+              protect the planet. Let’s build something impactful — one
+              partnership at a time.
+            </p>
+
+            <ContactInfo contactInfoList={contactInfoList} />
+          </div>
+
+          <div className="col-span-12 lg:col-span-8 lg:col-start-8">
+            <ContactFormCard />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 export default BecomePartner;

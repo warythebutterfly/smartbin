@@ -1,132 +1,170 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Heading, Text } from "@/components/ui";
 import { Landing, urlForImage } from "~/sanity/lib";
-import { ChevronLeft, ChevronRight } from "@/components/icons";
+import {
+  ChevronLeft,
+  ChevronRight,
+  QuoteLeft,
+  QuoteRight,
+} from "@/components/icons";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import ReactPlayer from "react-player/lazy";
+import { Star, StarHalf } from "@/components/icons";
 
 import "swiper/css";
 import "swiper/css/navigation";
 
-const Testimonials = ({ data }: { data: Landing["testimonialSection"] }) => {
-  const [isBeginning, setIsBeginning] = useState(true);
-  const [isEnd, setIsEnd] = useState(false);
+const Rating = ({
+  rating,
+  showLabel,
+  className,
+  ...rest
+}: {
+  rating: number;
+  showLabel: boolean;
+  className: any;
+  rest: any;
+}) => (
+  <p className={`my-6 ${className}`} {...rest}>
+    <span className="flex items-center">
+      {[...Array(5)].map((_, i) => {
+        const index = i + 1;
+        let content: JSX.Element;
 
-  const swiperRef = useRef<SwiperRef>();
+        if (index <= Math.floor(rating)) {
+          content = <Star />;
+        } else if (rating > i && rating < index + 1) {
+          content = <StarHalf />;
+        } else {
+          content = <Star color="#e0e0e0" />;
+        }
 
-  useEffect(() => {
-    swiperRef.current?.swiper?.on("slideChange", (swiper) => {
-      if (swiper.isBeginning) {
-        setIsBeginning(true);
-      } else {
-        setIsBeginning(false);
-      }
+        return <Fragment key={i}>{content}</Fragment>;
+      })}
+    </span>
+    {showLabel && <span className="ml-2">{rating.toFixed(1)}</span>}
+  </p>
+);
 
-      if (swiper.isEnd) {
-        setIsEnd(true);
-      } else {
-        setIsEnd(false);
-      }
-    });
-  }, []);
-
-  const onClickPrev = () => swiperRef.current?.swiper?.slidePrev();
-  const onClickNext = () => swiperRef.current?.swiper?.slideNext();
-
-  const getCompanyLogoUrl = (
-    company: Landing["testimonialSection"][0]["companyLogo"],
-  ) => (company ? urlForImage(company)?.url() : undefined);
-
-  return (
-    <section id="testimonials" className="pt-20 pb-32 bg-[#daffd6]">
-      <div className="mb-20 px-3 max-w-5xl mx-auto">
-        <Text className="mb-6 text-[#4B5563] text-center font-normal leading-6">
-          What our partners say about us
-        </Text>
-        <Heading
-          as="h2"
-          className="text-lg md:text-4xl font-normal md:leading-[56px] text-center"
-        >
-          As we
-          <span className="text-[#1F2937]">
-            {" "}
-            advance into the future through strategic partnerships
-          </span>
-          , these are testaments to our collaborative journey and shared vision.
-        </Heading>
-      </div>
-
-      <div className="max-w-screen-md mx-auto py-12 flex items-center">
-        <div className="flex-shrink-0">
-          <button
-            onClick={onClickPrev}
-            disabled={isBeginning}
-            className="bg-none border-none disabled:opacity-25 disabled:cursor-auto disabled:pointer-events-none"
-          >
-            <ChevronLeft className="text-[#06813e] w-10 h-10" />
-          </button>
+const TestimonialItem = ({ testimonial }: { testimonial: any }) => (
+  <div className="bg-white shadow-xl dark:bg-slate-800 rounded-2xl transition duration-300 h-full p-6">
+    <div className="mt-4">
+      <Rating
+        rating={testimonial.rating}
+        showLabel={false}
+        className={""}
+        rest={""}
+      />
+      <p className="opacity-50 mb-6">{testimonial.text}</p>
+      <div className="flex items-center">
+        <div className="mr-2">
+          <img
+            src={testimonial.picture}
+            alt={testimonial.fullName}
+            className="max-w-full h-auto rounded-full border"
+            width="47"
+          />
         </div>
-        <Swiper
-          id="testimonials-slider"
-          ref={swiperRef as any}
-          className="flex-1"
-          slidesPerView={1}
-          modules={[Autoplay]}
-          autoplay={{ delay: 2500, disableOnInteraction: false }}
-        >
-          {data?.map((testimonial, idx) => (
-            <SwiperSlide key={idx}>
-              <div className="flex flex-col items-center gap-14" key={idx}>
-                {testimonial.videoUrl && (
-                  // pt-[56.25%], w-[640px] h-[360px]
-                  <div className="relative w-full max-w-[560px] h-[280px]">
-                    <ReactPlayer
-                      url={testimonial.videoUrl}
-                      width="100%"
-                      height="100%"
-                      className="absolute top-0 left-0"
+        <div>
+          <h4 className="text-xl text-primary font-medium">
+            {testimonial.fullName}
+          </h4>
+          {/* <p className="text-sm">
+            <i>{testimonial.author.designation}</i>
+          </p> */}
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+// TestimonialItem.propTypes = {
+//   testimonial: PropTypes.object.isRequired,
+// };
+
+const Testimonials = ({ data }: { data: Landing["testimonialSection"] }) => {
+  const [index, setIndex] = useState(0);
+  const { picture, fullName, rating, text } = data[index];
+
+  const handleSelect = (selectedIndex: number) => setIndex(selectedIndex);
+  return (
+    <section className="ezy__testimonial1 py-14 md:py-24 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white">
+      <div className="container px-4 mx-auto">
+        <div className="flex justify-center md:mb-6">
+          <div className="sm:max-w-lg text-center">
+            <h2 className="text-3xl text-primary dark:text-white leading-none md:text-[45px] font-bold mb-4">
+              Community Reviews
+            </h2>
+            <p className="text-[#374151]">
+              Hear how PlastoGas Hub is making a difference from voices that
+              reflect our journey toward sustainability.
+            </p>
+          </div>
+        </div>
+        <section className="ezy__testimonial18 py-14 md:py-24 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white z-[1]">
+          <div className="container px-4 mx-auto">
+            <div>
+              <div>
+                <p className="relative text-lg md:text-[26px] leading-10 font-bold mb-6 md:mb-12 text-center text-primary dark:text-white italic z-[1]">
+                  {/* <FontAwesomeIcon
+                    icon={faQuoteLeft}
+                    className="absolute -top-3 left-0 md:-top-1/2 text-[100px] text-blue-600 text-opacity-10 -z-[1]"
+                  /> */}
+                  <QuoteRight className="absolute -top-3 left-0 md:-top-1/2 text-[100px] text-blue-600 text-opacity-10 -z-[1] h-24 w-24" />
+                  {text}
+                  {/* <FontAwesomeIcon
+                    icon={faQuoteRight}
+                    className="absolute -bottom-3 right-0 md:-bottom-1/2 text-[100px] text-blue-600 text-opacity-10 -z-[1]"
+                  /> */}
+                  <QuoteLeft className="absolute -bottom-3 right-0 md:-bottom-1/2 text-[100px] text-blue-600 text-opacity-10 -z-[1] h-24 w-24" />
+                </p>
+                <div className="text-center">
+                  <div className="mr-3">
+                    <img
+                      src={picture}
+                      alt={fullName}
+                      className="w-20 h-20 rounded-full mb-4 mx-auto"
                     />
                   </div>
-                )}
+                  <div className="max-w-5xl mx-auto flex items-center flex-col">
+                    <h4 className="text-xl text-secondary font-medium mb-2">
+                      {fullName}
+                    </h4>
 
-                <Text className="text-lg md:text-xl font-medium italic">
-                  {`“${testimonial.text}”`}
-                </Text>
-
-                <div className="flex flex-col items-center gap-4">
-                  <figcaption className="">
-                    <Text className="font-medium text-base md:text-lg">
-                      {testimonial.name}
-                    </Text>
-                    <Text className="text-sm md:text-base">{`${testimonial.role} at ${testimonial.company}`}</Text>
-                  </figcaption>
-
-                  {getCompanyLogoUrl(testimonial.companyLogo) && (
-                    <div className="grayscale flex justify-center relative w-full h-[52px]">
-                      <Image
-                        src={getCompanyLogoUrl(testimonial.companyLogo)!}
-                        alt={testimonial.company}
-                        className="object-contain"
-                        fill
-                      />
-                    </div>
-                  )}
+                    <Rating
+                      rating={rating}
+                      showLabel={false}
+                      className={""}
+                      rest={""}
+                    />
+                  </div>
                 </div>
               </div>
-            </SwiperSlide>
+              <div className="flex justify-center gap-2 m-0 mt-12">
+                {data?.map((testimonial, idx) => (
+                  <button
+                    className={`w-3 h-3 rounded-full ${
+                      index === idx
+                        ? "scale-125 bg-secondary"
+                        : " bg-gray-400 dark:bg-slate-800"
+                    } `}
+                    key={idx}
+                    onClick={() => handleSelect(idx)}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* <div className="grid grid-cols-6 gap-6 pt-8">
+          {data?.map((testimonial, idx) => (
+            <div className="col-span-6 md:col-span-3 lg:col-span-2" key={idx}>
+              <TestimonialItem testimonial={testimonial} />
+            </div>
           ))}
-        </Swiper>
-        <div className="flex-shrink-0">
-          <button
-            onClick={onClickNext}
-            disabled={isEnd}
-            className="bg-none border-none disabled:opacity-25 disabled:cursor-auto disabled:pointer-events-none"
-          >
-            <ChevronRight className="text-[#06813e] w-10 h-10" />
-          </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

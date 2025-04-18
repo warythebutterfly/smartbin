@@ -80,23 +80,18 @@ export const testimonials = defineType({
   type: "object",
   fields: [
     defineField({
-      name: "name",
-      title: "Name",
+      name: "fullName",
+      title: "Full Name",
       type: "string",
     }),
     defineField({
-      name: "role",
-      title: "Role",
-      type: "string",
+      name: "rating",
+      title: "Rating",
+      type: "number",
     }),
     defineField({
-      name: "company",
-      title: "Company",
-      type: "string",
-    }),
-    defineField({
-      name: "companyLogo",
-      title: "Company Logo",
+      name: "picture",
+      title: "Picture",
       type: "image",
       options: {
         hotspot: true,
@@ -107,15 +102,6 @@ export const testimonials = defineType({
       title: "Text",
       type: "text",
       validation: (rule) => rule.required(),
-    }),
-    defineField({
-      title: "Video URL",
-      name: "videoUrl",
-      type: "url",
-      validation: (Rule) =>
-        Rule.uri({
-          scheme: ["https"],
-        }),
     }),
   ],
 });

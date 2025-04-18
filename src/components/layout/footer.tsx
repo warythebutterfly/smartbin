@@ -1,8 +1,14 @@
 import Link from "next/link";
 import React from "react";
-import { InstagramIcon, LinkedinIcon, Logo } from "../icons";
+import {
+  EnvelopeIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  Logo,
+  PhoneIcon,
+} from "../icons";
 
-const Footer = () => {
+const FooterOld = () => {
   const menus = [
     // {
     //   title: "Mission statement",
@@ -81,6 +87,109 @@ const Footer = () => {
           </Link>
         </div>
       </nav>
+    </footer>
+  );
+};
+
+const Footer = () => {
+  const menus = [
+    // {
+    //   title: "Mission statement",
+    //   href: "/#vision",
+    // },
+    {
+      title: "News",
+      href: "/news",
+    },
+    {
+      title: "Conducts",
+      href: "/conducts",
+    },
+    {
+      title: "Partners",
+      href: "/partners",
+    },
+    // {
+    //   title: "Terms",
+    //   href: "/privacy-policy?tab=2",
+    // },
+    // {
+    //   title: "Careers",
+    //   href: "/careers",
+    // },
+    // {
+    //   title: "Products",
+    //   href: "/products",
+    // },
+    {
+      title: "Team",
+      href: "/team",
+    },
+    {
+      title: "Our app",
+      href: "https://bine.yctplastogashub.com",
+    },
+    // {
+    //   title: "Privacy Policy and Terms",
+    //   href: "/privacy-policy",
+    // },
+  ];
+
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="wrapper py-6">
+      <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-white text-center md:justify-between">
+        <Link href={"/"}>
+          <Logo />
+        </Link>
+
+        <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
+          {menus.map((menu) => (
+            <li key={menu.title}>
+              <Link
+                href={menu.href}
+                className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
+              >
+                {menu.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="mt-12 flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
+        <p className="mb-4 text-center font-normal text-primary md:mb-0">
+          &copy; {currentYear}{" "}
+          <a href="https://material-tailwind.com/">Yct PlastoGas Hub</a>. All
+          Rights Reserved.
+        </p>
+        <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
+          <Link
+            href="#"
+            className="opacity-80 transition-opacity hover:opacity-100"
+          >
+            <EnvelopeIcon className="h-6 w-6" />
+          </Link>
+          <Link
+            href="#"
+            className="opacity-80 transition-opacity hover:opacity-100"
+          >
+            <PhoneIcon className="h-6 w-6" />
+          </Link>
+          <Link
+            href="#"
+            className="opacity-80 transition-opacity hover:opacity-100"
+          >
+            <LinkedinIcon className="h-5 w-5" />
+          </Link>
+          <Link
+            href="#"
+            className="opacity-80 transition-opacity hover:opacity-100"
+          >
+            <InstagramIcon className="h-5 w-5" />
+          </Link>
+        </div>
+      </div>
     </footer>
   );
 };

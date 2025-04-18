@@ -10,3 +10,7 @@ export * from "./notFoundText";
 export * from "./serverErrorText";
 export * from "./chevronLeft";
 export * from "./chevronRight";
+export * from "./star";
+export * from "./quote";
+export * from "./envelope";
+export * from "./phone";

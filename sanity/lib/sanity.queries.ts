@@ -288,12 +288,10 @@ export interface Landing {
     mission: any;
   };
   testimonialSection: {
-    name: string;
-    role: string;
-    company: string;
-    companyLogo: any;
+    fullName: string;
+    rating: number;
+    picture: any;
     text: any;
-    videoUrl?: string;
   }[];
   _createdAt: string;
 }

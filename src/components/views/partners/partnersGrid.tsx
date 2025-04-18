@@ -7,10 +7,10 @@ const PartnersGrid = ({ data }: { data: Partner[] }) => {
   return (
     <section className="py-16 px-4 md:px-12">
       <div className="text-center mb-12">
-        <Heading className="text-4xl font-bold text-primary tracking-tight mb-2">
-          Partners
+        <Heading className="text-3xl font-bold text-primary tracking-tight mb-2">
+          Our Partners
         </Heading>
-        <div className="w-20 h-1 bg-gradient-to-r from-[#2DBE60] via-[#003464] to-[#2DBE60] rounded-full mx-auto" />
+        {/* <div className="w-20 h-1 bg-gradient-to-r from-[#2DBE60] via-[#003464] to-[#2DBE60] rounded-full mx-auto" /> */}
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
