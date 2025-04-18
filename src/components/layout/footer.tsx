@@ -165,25 +165,25 @@ const Footer = () => {
         </p>
         <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
           <Link
-            href="#"
+            href="mailto:yctplastogashub@gmail.com"
             className="opacity-80 transition-opacity hover:opacity-100"
           >
             <EnvelopeIcon className="h-6 w-6" />
           </Link>
           <Link
-            href="#"
+            href="callto:+234 8183964263"
             className="opacity-80 transition-opacity hover:opacity-100"
           >
             <PhoneIcon className="h-6 w-6" />
           </Link>
           <Link
-            href="#"
+            href="https://www.linkedin.com/company/#/"
             className="opacity-80 transition-opacity hover:opacity-100"
           >
             <LinkedinIcon className="h-5 w-5" />
           </Link>
           <Link
-            href="#"
+            href="https://instagram.com/#"
             className="opacity-80 transition-opacity hover:opacity-100"
           >
             <InstagramIcon className="h-5 w-5" />
