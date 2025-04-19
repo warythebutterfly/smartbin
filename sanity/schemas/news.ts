@@ -28,7 +28,91 @@ export default defineType({
       name: "content",
       title: "Content of the post",
       type: "array",
-      of: [{ type: "block" }],
+      of: [
+        {
+          type: "block",
+          styles: [
+            { title: "Heading 1", value: "h1" },
+            { title: "Heading 2", value: "h2" },
+            { title: "Heading 3", value: "h3" },
+            { title: "Heading 4", value: "h4" },
+            { title: "Heading 5", value: "h5" },
+            { title: "Heading 6", value: "h6" },
+            { title: "Normal", value: "normal" },
+            { title: "Quote", value: "blockquote" },
+          ],
+          marks: {
+            decorators: [
+              { title: "Strong", value: "strong" },
+              { title: "Emphasis", value: "em" },
+            ],
+            annotations: [
+              {
+                name: "fontFamily",
+                type: "object",
+                title: "Font Family",
+                fields: [
+                  {
+                    name: "family",
+                    type: "string",
+                    title: "Font Family",
+                  },
+                ],
+              },
+              {
+                name: "link",
+                type: "object",
+                title: "External Link",
+                fields: [
+                  {
+                    name: "href",
+                    type: "url",
+                    title: "URL",
+                  },
+                ],
+              },
+            ],
+          },
+        },
+        {
+          type: "image",
+          options: { hotspot: true },
+          fields: [
+            {
+              name: "caption",
+              type: "string",
+              title: "Caption",
+            },
+          ],
+        },
+        {
+          type: "object",
+          name: "youtube",
+          title: "YouTube Embed",
+          fields: [
+            {
+              name: "url",
+              type: "url",
+              title: "YouTube Video URL",
+              validation: (Rule) =>
+                Rule.uri({
+                  scheme: ["http", "https"],
+                  allowRelative: false,
+                  allowCredentials: false,
+                }),
+            },
+          ],
+          preview: {
+            select: { url: "url" },
+            prepare({ url }) {
+              return {
+                title: "YouTube Embed",
+                subtitle: url,
+              };
+            },
+          },
+        },
+      ],
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -38,9 +122,19 @@ export default defineType({
       of: [
         {
           type: "image",
-          options: {
-            hotspot: true,
-          },
+          options: { hotspot: true },
+          fields: [
+            {
+              name: "caption",
+              type: "string",
+              title: "Caption",
+            },
+            {
+              name: "alt",
+              type: "string",
+              title: "Alt text",
+            },
+          ],
         },
       ],
     }),

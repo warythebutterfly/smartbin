@@ -318,7 +318,7 @@ const BecomePartnerOld = () => {
                 as="h3"
                 className="text-2xl text-primary mb-4 flex items-center justify-center gap-4"
               >
-                Thank You! <CheckIcon />
+                Thank You! <CheckIcon className="" />
               </Heading>
               <p>
                 Your message has been submitted. We&apos;ll get back to you
@@ -462,7 +462,7 @@ const ContactForm = ({
             as="h3"
             className="text-2xl text-zinc-900 dark:text-white mb-4 flex items-center justify-center gap-4"
           >
-            Thank You! <CheckIcon />
+            Thank You! <CheckIcon className="" />
           </Heading>
           <p className="text-zinc-900 dark:text-white">
             We&apos;ve received your inquiry and will get back to you as soon as

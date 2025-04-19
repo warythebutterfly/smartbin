@@ -45,7 +45,7 @@ const InvestorItem = ({ investor }: { investor: Investor }) => {
                   rel="noreferrer noopener"
                   className="flex gap-2 items-center"
                 >
-                  <DownloadIcon />
+                  <DownloadIcon className="" />
                   <Text>Download</Text>
                 </Link>
               ) : null}

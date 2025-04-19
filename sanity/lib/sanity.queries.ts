@@ -91,8 +91,31 @@ const newsFields = groq`
   title,
   excerpt,
   publishedAt,
-  content,
-  "images": images[].asset->url,
+  content[]{
+    ...,
+    markDefs[]{
+      ...,
+      _type == "fontFamily" => {
+        _type,
+        family
+      },
+      _type == "link" => {
+        _type,
+        href
+      }
+    },
+    _type == "image" => {
+      ...,
+      "url": asset->url,
+      caption,
+      alt
+    }
+  },
+  "images": images[]{
+    "url": asset->url,
+    caption,
+    alt
+  },
   "youtubeLinks": youtubeLinks[],
   _createdAt
 `;
