@@ -3,10 +3,11 @@ import Partners from "./partners";
 import { Partner, getClient, getPartnersData } from "~/sanity/lib";
 
 const PartnersSkeleton = () => (
-  <div className="flex gap-8">
-    <div className="animate-pulse animate-duration-2 w-[150px] h-[150px] bg-[#37415130] rounded-xl"></div>
-    <div className="animate-pulse animate-duration-2 w-[150px] h-[150px] bg-[#37415130] rounded-xl"></div>{" "}
-    <div className="animate-pulse animate-duration-2 w-[150px] h-[150px] bg-[#37415130] rounded-xl"></div>
+  <div className="flex justify-center flex-shrink-0 -space-x-4 overflow-hidden lg:justify-start">
+    <div className="animate-pulse animate-duration-2 w-[80px] h-[80px] bg-[#37415130] rounded-full"></div>{" "}
+    <div className="animate-pulse animate-duration-2 w-[80px] h-[80px] bg-[#37415130] rounded-full"></div>{" "}
+    <div className="animate-pulse animate-duration-2 w-[80px] h-[80px] bg-[#37415130] rounded-full"></div>
+    <div className="animate-pulse animate-duration-2 w-[80px] h-[80px] bg-[#37415130] rounded-full"></div>
   </div>
 );
 

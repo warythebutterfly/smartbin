@@ -20,7 +20,7 @@ const Partners = ({ partners }: { partners: Partner[] }) => {
       {condition ? (
         <div className="mt-8 lg:mt-12 lg:flex lg:items-center">
           <div className="flex justify-center flex-shrink-0 -space-x-4 overflow-hidden lg:justify-start">
-            {partners.slice(0, 4).map((partner, idx) => (
+            {partners.slice(0, 4).map((partner) => (
               <div key={partner._id} className="">
                 <Image
                   src={urlForImage(partner.partnerLogo).url()}

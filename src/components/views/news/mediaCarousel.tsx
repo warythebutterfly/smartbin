@@ -16,9 +16,11 @@ export const MediaCarousel = ({ news }: { news: News }) => {
   };
 
   const allMedia = [
-    ...(news.images || []).map((img: string) => ({
+    ...(news.images || []).map((img: any) => ({
       type: "image",
-      url: urlForImage(img).url(),
+      url: img.url,
+      caption: img.caption,
+      alt: img.alt,
     })),
     ...(news.youtubeLinks || []).map((link: string) => ({
       type: "video",
@@ -66,7 +68,7 @@ export const MediaCarousel = ({ news }: { news: News }) => {
 };
 
 // Utility function to extract YouTube video ID
-const extractYouTubeID = (url: string): string => {
+export const extractYouTubeID = (url: string): string => {
   const match = url?.match(
     /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=))([\w-]{11})/,
   );

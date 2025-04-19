@@ -1,6 +1,6 @@
 import React from "react";
 
-export const CheckIcon = () => {
+export const CheckIcon = ({ className = "" }: { className: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,6 +10,7 @@ export const CheckIcon = () => {
       height="32"
       viewBox="0 0 256 256"
       xmlSpace="preserve"
+      className={className}
     >
       <defs></defs>
       <g

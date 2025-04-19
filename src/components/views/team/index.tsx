@@ -24,7 +24,7 @@ const TeamView = ({ members }: { members: Team[] }) => {
               mission and partners across all projects.
             </p>
 
-            <div className="relative inline-flex items-center justify-center sm:mt-12 group">
+            <div className="relative inline-flex items-center justify-center mt-8 group">
               <div className="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-[#003464] to-[#2DBE60] group-hover:shadow-lg group-hover:shadow-green-500/50"></div>
               <Link
                 href="/partners"
