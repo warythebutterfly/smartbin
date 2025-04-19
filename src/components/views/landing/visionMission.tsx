@@ -5,6 +5,7 @@ import styles from "./styles.module.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronRight } from "@/components/icons";
 import OurValues, { ValueItem } from "./ourValues";
+import Head from "next/head";
 
 const VisionMission = ({ data }: { data: Landing["visionSection"] }) => {
   return (
@@ -246,18 +247,18 @@ const TextParallaxContent = ({
   children: any;
 }) => {
   return (
-    <div
-      style={{
-        paddingLeft: IMG_PADDING,
-        paddingRight: IMG_PADDING,
-      }}
-    >
-      <div className="relative h-[150vh]">
-        <StickyImage imgUrl={imgUrl} />
-        <OverlayCopy heading={heading} subheading={subheading} />
+    <>
+      <Head>
+        <link rel="preload" as="image" href={imgUrl} />
+      </Head>
+      <div style={{ paddingLeft: IMG_PADDING, paddingRight: IMG_PADDING }}>
+        <div className="relative h-[150vh]">
+          <StickyImage imgUrl={imgUrl} />
+          <OverlayCopy heading={heading} subheading={subheading} />
+        </div>
+        {children}
       </div>
-      {children}
-    </div>
+    </>
   );
 };
 

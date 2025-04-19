@@ -171,12 +171,12 @@ export const Navbar = () => {
             >
               News
             </Link>
-            <Link
+            {/* <Link
               href={"/conducts"}
               className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
             >
               Conducts
-            </Link>
+            </Link> */}
             <Link
               href={"/partners"}
               className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
@@ -203,31 +203,31 @@ export const Navbar = () => {
             <div className="flex flex-col pt-8 pb-4 space-y-6">
               <Link
                 href={"/news"}
-                className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-[#003464]"
+                className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
               >
                 News
               </Link>
-              <Link
+              {/* <Link
                 href={"/conducts"}
-                className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-[#003464]"
+                className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
               >
                 Conducts
-              </Link>
+              </Link> */}
               <Link
                 href={"/partners"}
-                className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-[#003464]"
+                className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
               >
                 Partners
               </Link>
               <Link
                 href={"/team"}
-                className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-[#003464]"
+                className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
               >
                 Team
               </Link>
               <Link
                 href={"https://bine.yctplastogashub.com"}
-                className="text-base font-normal text-gray-400 transition-all duration-200 hover:text-[#003464]"
+                className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
               >
                 Our app
               </Link>

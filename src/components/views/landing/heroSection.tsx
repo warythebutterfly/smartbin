@@ -103,7 +103,7 @@ const HeroSection = ({ data }: { data: Landing["heroSection"] }) => {
             </div>
           </div>
 
-          <div className="mt-8 md:absolute md:mt-0 md:top-32 lg:top-0 md:right-0">
+          <div className="mt-8 md:absolute md:mt-0 md:top-32 lg:top-0 md:right-0 hide-on-tablet">
             <Image src={HeroImg} alt="Hero" />
           </div>
         </div>

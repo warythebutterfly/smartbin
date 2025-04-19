@@ -102,3 +102,10 @@ html {
     --chart-5: 340 75% 55%;
   }
 }
+
+/* global.css or relevant CSS file */
+@media (min-width: 500px) and (max-width: 1023px) {
+  .hide-on-tablet {
+    display: none;
+  }
+}

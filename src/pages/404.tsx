@@ -14,7 +14,11 @@ const NotFoundPage = () => {
         <div className="max-w-[461px] mx-auto flex flex-col items-center relative">
           <NotFoundText />
 
-          <div className="absolute top-[8rem] flex flex-col items-center">
+          <Link href="/">
+            <Button className="mb-10 w-fit">Go back home</Button>
+          </Link>
+
+          {/* <div className="absolute top-[8rem] flex flex-col items-center">
             <h1 className="mt-6 text-[#181716] text-[46px] leading-[48px]">
               Page not found
             </h1>
@@ -25,7 +29,7 @@ const NotFoundPage = () => {
             <Link href="/">
               <Button className="mt-8 w-fit">Go back home</Button>
             </Link>
-          </div>
+          </div> */}
         </div>
       </section>
     </Fragment>

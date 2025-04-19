@@ -60,11 +60,12 @@ const TestimonialItem = ({ testimonial }: { testimonial: any }) => (
       <p className="opacity-50 mb-6">{testimonial.text}</p>
       <div className="flex items-center">
         <div className="mr-2">
-          <img
+          <Image
             src={testimonial.picture}
             alt={testimonial.fullName}
             className="max-w-full h-auto rounded-full border"
             width="47"
+            height="47"
           />
         </div>
         <div>
@@ -90,7 +91,7 @@ const Testimonials = ({ data }: { data: Landing["testimonialSection"] }) => {
 
   const handleSelect = (selectedIndex: number) => setIndex(selectedIndex);
   return (
-    <section className="ezy__testimonial1 py-14 md:py-24 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white">
+    <section className="ezy__testimonial1 py-14 md:py-24 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white mt-4">
       <div className="container px-4 mx-auto">
         <div className="flex justify-center md:mb-6">
           <div className="sm:max-w-lg text-center">
@@ -122,10 +123,12 @@ const Testimonials = ({ data }: { data: Landing["testimonialSection"] }) => {
                 </p>
                 <div className="text-center">
                   <div className="mr-3">
-                    <img
+                    <Image
                       src={picture}
                       alt={fullName}
                       className="w-20 h-20 rounded-full mb-4 mx-auto"
+                      height={80}
+                      width={80}
                     />
                   </div>
                   <div className="max-w-5xl mx-auto flex items-center flex-col">
