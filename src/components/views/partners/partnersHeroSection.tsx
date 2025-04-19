@@ -151,7 +151,7 @@ const PartnersHeroSection = () => {
             <div className="hidden px-4 lg:block lg:w-1/12"></div>
             <div className="w-full px-4 lg:w-6/12">
               <div className="lg:ml-auto lg:text-right">
-                <div className="relative z-10 inline-block pt-11 lg:pt-0">
+                <div className="relative z-10 inline-block pt-11 lg:pt-0 hide-on-tablet">
                   <Image
                     src={PartnersHero}
                     alt="Partners Hero"
@@ -206,7 +206,14 @@ const SingleImage = ({ href, imgSrc }: { href: string; imgSrc: string }) => {
   return (
     <>
       <a href={href} className="flex w-full items-center justify-center">
-        <img src={imgSrc} alt="brand image" className="h-50 w-full" />
+        <Image
+          src={imgSrc}
+          alt="brand image"
+          width={756}
+          height={521}
+          className="h-50 w-full"
+          priority
+        />
       </a>
     </>
   );

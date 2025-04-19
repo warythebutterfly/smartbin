@@ -12,6 +12,7 @@ import {
   PhoneIcon,
 } from "@/components/icons";
 import contactFormEmailTemplate from "@/templates/contactForm";
+import { Dispatch, SetStateAction } from "react";
 
 const jost = Jost({ subsets: ["latin"] });
 
@@ -399,9 +400,14 @@ const contactInfoList = [
   },
 ];
 
-const ContactForm = () => {
+const ContactForm = ({
+  isContactFormSubmitted,
+  setIsContactFormSubmitted,
+}: {
+  isContactFormSubmitted: boolean;
+  setIsContactFormSubmitted: Dispatch<SetStateAction<boolean>>;
+}) => {
   const [isSubmmitting, setIsSubmmitting] = useState(false);
-  const [isContactFormSubmitted, setIsContactFormSubmitted] = useState(false);
 
   const {
     control,
@@ -459,7 +465,8 @@ const ContactForm = () => {
             Thank You! <CheckIcon />
           </Heading>
           <p className="text-zinc-900 dark:text-white">
-            Your message has been submitted. We&apos;ll get back to you soon.
+            We&apos;ve received your inquiry and will get back to you as soon as
+            possible.
           </p>
         </div>
       ) : (
@@ -505,18 +512,26 @@ const ContactForm = () => {
   );
 };
 
-const ContactFormCard = () => (
-  <div className="bg-white dark:bg-[#162231] shadow-xl rounded-2xl p-6 md:p-12">
-    <h2 className="text-2xl md:text-[45px] leading-none font-bold mb-4">
-      Contact Us
-    </h2>
-    {/* <p className="text-lg mb-12">
+const ContactFormCard = () => {
+  const [isContactFormSubmitted, setIsContactFormSubmitted] = useState(false);
+  return (
+    <div className="bg-white dark:bg-[#162231] shadow-xl rounded-2xl p-6 md:p-12">
+      {!isContactFormSubmitted && (
+        <h2 className="text-2xl md:text-[45px] leading-none font-bold mb-4">
+          Contact Us
+        </h2>
+      )}
+      {/* <p className="text-lg mb-12">
       We list your menu online, help you process orders.
     </p> */}
 
-    <ContactForm />
-  </div>
-);
+      <ContactForm
+        isContactFormSubmitted={isContactFormSubmitted}
+        setIsContactFormSubmitted={setIsContactFormSubmitted}
+      />
+    </div>
+  );
+};
 
 const ContactInfo = ({ contactInfoList }: { contactInfoList: any[] }) => (
   <div className="mt-5 pt-md-4">

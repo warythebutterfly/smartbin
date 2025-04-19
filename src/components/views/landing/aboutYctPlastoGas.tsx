@@ -8,11 +8,11 @@ import { Landing } from "~/sanity/lib";
 const AboutYctPlastoGas = ({ data }: { data: Landing["aboutSection"] }) => {
   return (
     <>
-      <section className="ezy__cta8 py-14 md:py-24 mx-auto max-w-7xl bg-white text-zinc-900">
+      <section className="ezy__cta8 py-14 md:py-24 flex items-center justify-center bg-white text-zinc-900">
         <div className="container px-4">
           <div className="bg-[#eff4fd] rounded-3xl overflow-hidden">
             <div className="grid grid-cols-12">
-              <div className="col-span-12 lg:col-span-6 bg-black bg-opacity-10 text-center p-4">
+              <div className="col-span-12 lg:col-span-6 bg-black bg-opacity-10 text-center p-4 flex justify-center">
                 <Image
                   src={AboutYctPlastoGasHub}
                   alt=""

@@ -101,10 +101,10 @@ const Footer = () => {
       title: "News",
       href: "/news",
     },
-    {
-      title: "Conducts",
-      href: "/conducts",
-    },
+    // {
+    //   title: "Conducts",
+    //   href: "/conducts",
+    // },
     {
       title: "Partners",
       href: "/partners",

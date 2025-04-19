@@ -8,66 +8,86 @@ const contactFormEmailTemplate = function (
   message: string,
 ) {
   const html = `
-        <html>
+      <html>
         <head>
-            <style>
-                body {
-                    font-family: 'Arial', sans-serif;
-                }
+          <style>
+            body {
+              font-family: 'Segoe UI', sans-serif;
+              background-color: #f9f9f9;
+              color: #333;
+            }
   
-                .container {
-                    max-width: 600px;
-                    margin: 0 auto;
-                    padding: 20px;
-                }
+            .container {
+              max-width: 600px;
+              margin: 20px auto;
+              background: #fff;
+              border-radius: 8px;
+              overflow: hidden;
+              box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            }
   
-                .header {
-                    background-color: #3498db;
-                    color: #fff;
-                    padding: 10px;
-                    text-align: center;
-                }
+            .header {
+              background-color: #00796b;
+              color: #ffffff;
+              padding: 20px;
+              text-align: center;
+            }
   
-                .content {
-                    padding: 20px;
-                }
+            .header h1 {
+              margin: 0;
+              font-size: 20px;
+            }
   
-                .footer {
-                    background-color: #f2f2f2;
-                    padding: 10px;
-                    text-align: center;
-                }
-            </style>
+            .content {
+              padding: 20px;
+            }
+  
+            .content p {
+              margin: 8px 0;
+              line-height: 1.6;
+            }
+  
+            .footer {
+              background-color: #f1f1f1;
+              padding: 15px;
+              text-align: center;
+              font-size: 14px;
+              color: #555;
+            }
+  
+            .label {
+              font-weight: bold;
+              color: #00796b;
+            }
+          </style>
         </head>
         <body>
-            <div class="container">
-                <div class="header">
-                    <h1>Contact Form Submission</h1>
-                </div>
-                <div class="content">
-                    <p>Dear Yct PlastoGas Hub,</p>
-                    <p>You have received a new message via the contact form:</p>
-                    <p><strong>Name:</strong> ${name}</p>
-                    <p><strong>Email:</strong> ${email}</p>
-                    <p><strong>Country:</strong> ${country}</p>
-                    <p><strong>City:</strong> ${city}</p>
-                    <p><strong>Phone:</strong> ${phone}</p>
-                    <p><strong>Subject:</strong></p>
-                    <p>${subject}</p>
-                    <p><strong>Message:</strong></p>
-                    <p>${message}</p>
-                </div>
-                <div class="footer">
-                    <p>Thank you for your attention!</p>
-                </div>
+          <div class="container">
+            <div class="header">
+              <h1>New Partnership Inquiry</h1>
             </div>
+            <div class="content">
+              <p>Hello Team,</p>
+              <p>You’ve received a new partnership request from the website contact form. Here are the details:</p>
+              <p><span class="label">Name:</span> ${name}</p>
+              <p><span class="label">Email:</span> ${email}</p>
+              <p><span class="label">Phone:</span> ${phone}</p>
+              <p><span class="label">Location:</span> ${city}, ${country}</p>
+              <p><span class="label">Subject:</span> ${subject}</p>
+              <p><span class="label">Message:</span></p>
+              <p>${message}</p>
+            </div>
+            <div class="footer">
+              <p>YCT PlastoGas Hub | Sustainable Partnerships for a Greener Future</p>
+            </div>
+          </div>
         </body>
-        </html>
+      </html>
     `;
 
   return {
-    html: html,
-    mailSubject: "New Contact Form Submission",
+    html,
+    mailSubject: "Yct PlastoGasHub - New Partnership Inquiry",
   };
 };
 
