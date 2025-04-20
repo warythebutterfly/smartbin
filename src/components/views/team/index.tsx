@@ -37,37 +37,40 @@ const TeamView = ({ members }: { members: Team[] }) => {
           </div>
 
           {/* Team Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-4xl xl:max-w-6xl bg-white p-12 flex items-center justify-center rounded-xl">
             {members?.length === 0 ? (
               <div className="col-span-full text-center text-xl font-medium text-gray-500">
                 No Data!
               </div>
             ) : (
               members.map((member) => (
-                <div
-                  key={member._id}
-                  className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center px-6 py-10 text-center"
-                >
-                  {member?.avatar && (
-                    <div className="w-[140px] h-[140px] rounded-full overflow-hidden relative mb-6">
-                      <Image
-                        src={urlForImage(member.avatar).url()}
-                        alt={member.name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  )}
-
-                  {member?.name && (
-                    <p className="text-primary text-xl font-semibold mb-1">
+                <div key={member._id}>
+                  <img
+                    src={urlForImage(member.avatar).url()}
+                    alt={member.name}
+                    className="max-w-full h-auto rounded-full mx-auto"
+                    width="200"
+                  />
+                  <div className="px-4 py-6 xl:px-6 text-center">
+                    <h4 className="text-2xl font-medium mb-2 text-primary">
                       {member.name}
-                    </p>
-                  )}
-
-                  {member?.position && (
-                    <p className="text-[#374151] text-sm">{member.position}</p>
-                  )}
+                    </h4>
+                    <h6 className="font-medium text-neutral-600">
+                      {member.position}
+                    </h6>
+                    {/* <p className="opacity-50 mb-0">{member.bio}</p> */}
+                    {/* <div className="mt-6">
+				{member.socialLinks.map((link, i) => (
+					<a
+						href={link.href}
+						className="inline-block opacity-60 transition duration-300 hover:translate-y-1 hover:opacity-100 mr-4"
+						key={i}
+					>
+						<FontAwesomeIcon icon={link.icon} />
+					</a>
+				))}
+			</div> */}
+                  </div>
                 </div>
               ))
             )}
@@ -79,3 +82,13 @@ const TeamView = ({ members }: { members: Team[] }) => {
 };
 
 export default TeamView;
+
+/* 
+                   <Image
+                    src={urlForImage(member.avatar).url()}
+                    alt={member.name}
+                    className="max-w-full h-auto rounded-full mx-auto"
+                    width={230}
+                  />
+
+*/
