@@ -43,7 +43,7 @@ export const BlogDetailsView = ({ article }: { article: IBlog }) => {
                             href="/blog"
                             className="py-[10px] text-[#9CA3AF]"
                           >
-                            <button className="bg-primary h-[40px] w-[40px] rounded-full border border-white hover:border-blue-500 text-white hover:text-blue-500 transition ease-in-out duration-500 flex justify-center items-center cursor-pointer mr-4 lg:mr-0">
+                            <button className="bg-primary h-[40px] w-[40px] rounded-full border border-white hover:border-blue-500 text-white transition ease-in-out duration-500 flex justify-center items-center cursor-pointer mr-4 lg:mr-0">
                               <ChevronLeft className="text-xl" />
                             </button>
                           </Link>
