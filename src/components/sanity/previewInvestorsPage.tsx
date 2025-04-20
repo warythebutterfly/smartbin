@@ -1,20 +1,13 @@
-import { Investor, News, investorsQuery, newsQuery } from "~/sanity/lib";
+import { IBlog, blogQuery } from "~/sanity/lib";
 import { useLiveQuery } from "next-sanity/preview";
-import InvestorsView from "../views/news";
+import BlogView from "../views/blog";
 
 interface Props {
-  data: { investorsData: Investor[]; newsData: News[] };
+  data: IBlog[];
 }
 
-export const PreviewInvestorsPage = ({
-  data: { investorsData, newsData },
-}: Props) => {
-  const [updatedData] = useLiveQuery<Investor[]>(investorsData, investorsQuery);
-  const [updatedNews] = useLiveQuery<News[]>(newsData, newsQuery);
+export const PreviewBlogPage = ({ data: blogData }: Props) => {
+  const [updatedBlog] = useLiveQuery<IBlog[]>(blogData, blogQuery);
 
-  return (
-    <InvestorsView
-      data={{ investorsData: updatedData, newsData: updatedNews }}
-    />
-  );
+  return <BlogView data={updatedBlog} />;
 };

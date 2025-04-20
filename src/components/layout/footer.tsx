@@ -15,8 +15,8 @@ const FooterOld = () => {
     //   href: "/#vision",
     // },
     {
-      title: "News",
-      href: "/news",
+      title: "Blog",
+      href: "/blog",
     },
     {
       title: "Conducts",
@@ -93,14 +93,15 @@ const FooterOld = () => {
 
 const Footer = () => {
   const menus = [
+    {
+      title: "Home",
+      href: "/",
+    },
     // {
     //   title: "Mission statement",
     //   href: "/#vision",
     // },
-    {
-      title: "News",
-      href: "/news",
-    },
+
     // {
     //   title: "Conducts",
     //   href: "/conducts",
@@ -124,6 +125,10 @@ const Footer = () => {
     {
       title: "Team",
       href: "/team",
+    },
+    {
+      title: "Blog",
+      href: "/blog",
     },
     {
       title: "Our app",
@@ -159,7 +164,7 @@ const Footer = () => {
       </div>
       <div className="mt-12 flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
         <p className="mb-4 text-center font-normal text-primary md:mb-0">
-          &copy; {currentYear}{" "}
+          &copy; 2025{" "}
           <a href="https://material-tailwind.com/">Yct PlastoGas Hub</a>. All
           Rights Reserved.
         </p>

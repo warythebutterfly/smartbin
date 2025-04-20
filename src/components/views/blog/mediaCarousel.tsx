@@ -1,8 +1,8 @@
 import Slider from "react-slick";
 import Image from "next/image";
-import { News, urlForImage } from "~/sanity/lib";
+import { IBlog, urlForImage } from "~/sanity/lib";
 
-export const MediaCarousel = ({ news }: { news: News }) => {
+export const MediaCarousel = ({ article }: { article: IBlog }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -16,13 +16,13 @@ export const MediaCarousel = ({ news }: { news: News }) => {
   };
 
   const allMedia = [
-    ...(news.images || []).map((img: any) => ({
+    ...(article.images || []).map((img: any) => ({
       type: "image",
       url: img.url,
       caption: img.caption,
       alt: img.alt,
     })),
-    ...(news.youtubeLinks || []).map((link: string) => ({
+    ...(article.youtubeLinks || []).map((link: string) => ({
       type: "video",
       url: link,
     })),

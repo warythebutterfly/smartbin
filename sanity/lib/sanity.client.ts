@@ -16,14 +16,15 @@ import {
   productsQuery,
   Investor,
   investorsQuery,
-  News,
-  newsQuery,
+  IBlog,
+  blogQuery,
   Landing,
   landingQuery,
   PrivacyPolicy,
   privacyQuery,
   Terms,
   termsQuery,
+  blogDetailsQuery,
 } from "./sanity.queries";
 import { createClient, SanityClient } from "next-sanity";
 
@@ -100,8 +101,15 @@ export async function getInvestorsData(
   return await client.fetch(investorsQuery);
 }
 
-export async function getNewsData(client: SanityClient): Promise<News[]> {
-  return await client.fetch(newsQuery);
+export async function getBlogData(client: SanityClient): Promise<IBlog[]> {
+  return await client.fetch(blogQuery);
+}
+
+export async function getBlogDetailsData(
+  client: SanityClient,
+  slug: string,
+): Promise<IBlog> {
+  return await client.fetch(blogDetailsQuery, { slug });
 }
 
 export async function getLandingData(client: SanityClient): Promise<Landing> {

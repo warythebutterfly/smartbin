@@ -13,7 +13,7 @@ const pageMappings: { [key: string]: string } = {
   "/": "/",
   landing: "/",
   team: "/team",
-  news: "/news",
+  blog: "/blog",
   careers: "/careers",
   products: "/products",
   conducts: "/conducts",

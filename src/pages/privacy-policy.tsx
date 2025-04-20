@@ -10,6 +10,7 @@ import {
   Terms,
 } from "~/sanity/lib";
 import { PreviewPrivacyPage } from "@/components/sanity";
+import NotFoundPage from "./404";
 
 interface PageProps {
   data: { privacyData?: PrivacyPolicyProps; termsData?: Terms };
@@ -44,6 +45,7 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
 };
 
 const PrivacyPolicy = ({ data, preview, previewToken }: PageProps) => {
+  return <NotFoundPage />;
   if (preview && previewToken) {
     return <PreviewPrivacyPage data={data} />;
   }

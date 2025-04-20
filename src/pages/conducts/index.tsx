@@ -3,6 +3,7 @@ import { GetStaticProps } from "next";
 import ConductsView from "@/components/views/conducts";
 import { PreviewConductsPage } from "@/components/sanity";
 import { Conduct, getClient, getConductsData } from "~/sanity/lib";
+import NotFoundPage from "../404";
 
 interface PageProps {
   data: Conduct[];
@@ -36,6 +37,7 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
 };
 
 const Conducts = ({ data, preview, previewToken }: PageProps) => {
+  return <NotFoundPage />;
   if (preview && previewToken) {
     return <PreviewConductsPage data={data} />;
   }
