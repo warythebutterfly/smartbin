@@ -1,7 +1,7 @@
 import { SanityImage } from "../sanity/sanityImage";
 import { PortableText, PortableTextReactComponents } from "@portabletext/react";
 import Image from "next/image";
-import { extractYouTubeID } from "../views/news/mediaCarousel";
+import { extractYouTubeID } from "../views/blog/mediaCarousel";
 
 const myPortableTextComponents: Partial<PortableTextReactComponents> = {
   types: {
@@ -10,16 +10,9 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
         <SanityImage
           {...value}
           src={value.asset?.url}
-          alt={value.alt || "News image"}
-          width={800}
-          height={600}
+          alt={value.alt || "Article image"}
           className="rounded-lg mx-auto"
         />
-        {value.caption && (
-          <p className="text-center text-xs text-gray-500 mt-2">
-            {value.caption}
-          </p>
-        )}
       </div>
     ),
     youtube: ({ value }) => {

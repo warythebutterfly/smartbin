@@ -27,8 +27,8 @@ const DropdownMenu = ({
     //   href: "/#vision",
     // },
     {
-      title: "News",
-      href: "/news",
+      title: "Blog",
+      href: "/blog",
     },
     {
       title: "Conducts",

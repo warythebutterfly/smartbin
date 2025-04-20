@@ -89,8 +89,10 @@ const investorFields = groq`
 const newsFields = groq`
   _id,
   title,
+  "slug": slug.current,
   excerpt,
   publishedAt,
+  mainImage,
   content[]{
     ...,
     markDefs[]{
@@ -175,8 +177,14 @@ export const investorsQuery = groq`
   }
 `;
 
-export const newsQuery = groq`
+export const blogQuery = groq`
   *[_type == 'news'] {
+    ${newsFields}
+  }
+`;
+
+export const blogDetailsQuery = groq`
+  *[_type == 'news' && slug.current == $slug][0] {
     ${newsFields}
   }
 `;
@@ -267,11 +275,13 @@ export interface Investor {
   _createdAt: string;
 }
 
-export interface News {
+export interface IBlog {
   _id: string;
   title: string;
+  slug: string;
   excerpt: string;
   publishedAt: string;
+  mainImage: any;
   content: any;
   _createdAt: string;
   images: any;

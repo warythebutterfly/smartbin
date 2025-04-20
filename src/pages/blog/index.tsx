@@ -1,18 +1,11 @@
 import React from "react";
 import { GetStaticProps } from "next";
-import {
-  Investor,
-  News,
-  getClient,
-  getInvestorsData,
-  getNewsData,
-} from "~/sanity/lib";
-import InvestorsView from "@/components/views/news";
-import { PreviewInvestorsPage } from "@/components/sanity";
+import { IBlog, getBlogData, getClient, getInvestorsData } from "~/sanity/lib";
+import BlogView from "@/components/views/blog";
+import { PreviewBlogPage } from "@/components/sanity";
 
 interface PageProps {
-  investorsData: Investor[];
-  newsData: News[];
+  data: IBlog[];
   preview?: boolean;
   previewToken?: string;
 }
@@ -31,32 +24,23 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
   }
 
   const client = getClient();
-  const [investorsData, newsData] = await Promise.all([
-    getInvestorsData(client),
-    getNewsData(client),
-  ]);
+  const data = await getBlogData(client);
 
   return {
     props: {
-      investorsData,
-      newsData,
+      data,
       preview,
       previewToken,
     },
   };
 };
 
-const Investors = ({
-  investorsData,
-  newsData,
-  preview,
-  previewToken,
-}: PageProps) => {
+const Blog = ({ data, preview, previewToken }: PageProps) => {
   if (preview && previewToken) {
-    return <PreviewInvestorsPage data={{ investorsData, newsData }} />;
+    return <PreviewBlogPage data={data} />;
   }
 
-  return <InvestorsView data={{ investorsData, newsData }} />;
+  return <BlogView data={data} />;
 };
 
-export default Investors;
+export default Blog;

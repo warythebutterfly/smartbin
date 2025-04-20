@@ -1,17 +1,16 @@
 import { GetStaticProps } from "next";
 import React from "react";
-import ConductDetailsView from "@/components/views/conducts/detail";
 import {
-  Conduct,
   getClient,
-  getConductDetailsData,
-  getConductsData,
+  getBlogData,
+  getBlogDetailsData,
+  IBlog,
 } from "~/sanity/lib";
-import { PreviewConductDetailPage } from "@/components/sanity";
-import NotFoundPage from "../404";
+import { BlogDetailsView } from "@/components/views/blog/detail";
+import PreviewBlogDetailPage from "@/components/sanity/PreviewBlogDetailPage";
 
 interface PageProps {
-  data: Conduct;
+  data: IBlog;
   preview?: boolean;
   previewToken?: string;
 }
@@ -30,7 +29,7 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
     );
   }
   const client = getClient();
-  const data = await getConductDetailsData(client, params.slug);
+  const data = await getBlogDetailsData(client, params.slug);
 
   if (!data) {
     return {
@@ -49,10 +48,10 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
 
 export const getStaticPaths = async () => {
   const client = getClient();
-  const conductsData = await getConductsData(client);
+  const blogData = await getBlogData(client);
 
-  const paths = conductsData.map((conduct) => ({
-    params: { slug: conduct.slug },
+  const paths = blogData.map((blog) => ({
+    params: { slug: blog.slug },
   }));
 
   return {
@@ -61,13 +60,12 @@ export const getStaticPaths = async () => {
   };
 };
 
-const ConductDetail = ({ data, preview, previewToken }: PageProps) => {
-  return <NotFoundPage />;
+const BlogDetail = ({ data, preview, previewToken }: PageProps) => {
   if (preview && previewToken) {
-    return <PreviewConductDetailPage data={data} />;
+    return <PreviewBlogDetailPage data={data} />;
   }
 
-  return <ConductDetailsView data={data} />;
+  return <BlogDetailsView article={data} />;
 };
 
-export default ConductDetail;
+export default BlogDetail;

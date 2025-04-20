@@ -23,8 +23,8 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (
     case "category":
       return null;
 
-    // News schema is used in the `investors page`
-    case "news":
+    // Blog schema is used in the `investors page`
+    case "blog":
       return null;
 
     case schemaType:

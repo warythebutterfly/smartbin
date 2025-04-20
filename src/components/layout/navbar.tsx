@@ -21,7 +21,7 @@ const NavbarOld = () => {
 
   const mapBtnColor: Record<string, string> = {
     default: "bg-primary text-white",
-    "/news": "bg-primary text-white",
+    "/blog": "bg-primary text-white",
     "/conducts": "bg-white text-primary font-medium",
     "/conducts/[slug]": "bg-white text-primary font-medium",
     "/partners": "bg-[#2F80ED] text-white",
@@ -39,7 +39,7 @@ const NavbarOld = () => {
 
   const mapBgColor: Record<string, string> = {
     default: "bg-[#daffd6]",
-    "/news": "bg-white",
+    "/blog": "bg-white",
     "/conducts": "bg-primary",
     "/conducts/[slug]": "bg-primary",
     "/partners": "bg-transparent",
@@ -74,8 +74,8 @@ const NavbarOld = () => {
           >
             <MenuIcon className={`w-8 h-8 ${menuColor}`} />
           </button>
-          {/* <Link href="/news">
-      <Button className={`w-[107px] ${mapBtnColor[router.pathname]}`}> news </Button>
+          {/* <Link href="/blog">
+      <Button className={`w-[107px] ${mapBtnColor[router.pathname]}`}> blog </Button>
     </Link> */}
         </nav>
       </header>
@@ -95,9 +95,11 @@ export const Navbar = () => {
 
   const mapBgColor: Record<string, string> = {
     default: "bg-white",
-    "/news": "bg-white",
-    "/conducts": "bg-[#daffd6]",
-    "/conducts/[slug]": "bg-[#daffd6]",
+    "/blog": "bg-white",
+    "/conducts": "bg-white",
+    "/conducts/[slug]": "bg-white",
+    // "/conducts": "bg-[#daffd6]",
+    // "/conducts/[slug]": "bg-[#daffd6]",
     "/partners": "bg-transparent",
     "/privacy-policy": "bg-white",
     "/team": "bg-white",
@@ -165,18 +167,18 @@ export const Navbar = () => {
           </div>
 
           <nav className="hidden md:flex md:items-center md:justify-end md:space-x-12">
-            <Link
-              href={"/news"}
-              className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
-            >
-              News
-            </Link>
             {/* <Link
               href={"/conducts"}
               className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
             >
               Conducts
             </Link> */}
+            <Link
+              href={"/"}
+              className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
+            >
+              Home
+            </Link>
             <Link
               href={"/partners"}
               className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
@@ -188,6 +190,12 @@ export const Navbar = () => {
               className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
             >
               Team
+            </Link>
+            <Link
+              href={"/blog"}
+              className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
+            >
+              Blog
             </Link>
             <Link
               href={"https://bine.yctplastogashub.com"}
@@ -202,10 +210,10 @@ export const Navbar = () => {
           <nav>
             <div className="flex flex-col pt-8 pb-4 space-y-6">
               <Link
-                href={"/news"}
+                href={"/"}
                 className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
               >
-                News
+                Home
               </Link>
               {/* <Link
                 href={"/conducts"}
@@ -224,6 +232,12 @@ export const Navbar = () => {
                 className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
               >
                 Team
+              </Link>
+              <Link
+                href={"/blog"}
+                className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
+              >
+                Blog
               </Link>
               <Link
                 href={"https://bine.yctplastogashub.com"}
