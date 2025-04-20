@@ -22,7 +22,7 @@ export const BlogDetailsView = ({ article }: { article: IBlog }) => {
   ];
 
   return (
-    <section className="bg-[#f5faf0]">
+    <section className="bg-[#f5faf0] bg-team bg-right">
       <div
         className="ezy__travel1_JIUyTMc4 py-20 md:p-[100px] bg-[#0b1727] h-[400px] object-cover text-white relative z-1 bg-cover bg-no-repeat bg-center flex justify-center items-end overflow-hidden"
         style={{

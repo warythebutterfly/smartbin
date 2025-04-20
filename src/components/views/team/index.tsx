@@ -12,7 +12,7 @@ const TeamView = ({ members }: { members: Team[] }) => {
         <title>Team | YabaTech PlastoGas Hub</title>
       </Head>
 
-      <section className="pt-28 pb-36 bg-gradient-to-br from-[#F9FAFB] to-[#EEF2F6]">
+      <section className="pt-28 pb-36 bg-[#f5faf0] bg-team bg-no-repeat bg-right">
         <div className="wrapper">
           {/* Intro */}
           <div className="max-w-4xl mx-auto text-center mb-20">
