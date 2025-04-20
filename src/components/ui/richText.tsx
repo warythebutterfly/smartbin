@@ -47,33 +47,51 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
   },
   block: {
     h1: ({ children }) => (
-      <h1 className="text-3xl font-bold my-4">{children}</h1>
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold my-3 sm:my-4">
+        {children}
+      </h1>
     ),
     h2: ({ children }) => (
-      <h2 className="text-2xl font-semibold my-3">{children}</h2>
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold my-2.5 sm:my-3.5">
+        {children}
+      </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-xl font-medium my-2">{children}</h3>
+      <h3 className="text-lg sm:text-xl md:text-2xl font-medium my-2">
+        {children}
+      </h3>
     ),
     h4: ({ children }) => (
-      <h4 className="text-lg font-medium my-2">{children}</h4>
+      <h4 className="text-base sm:text-lg md:text-xl font-medium my-1.5 sm:my-2">
+        {children}
+      </h4>
     ),
     h5: ({ children }) => (
-      <h5 className="text-base font-medium my-1.5">{children}</h5>
+      <h5 className="text-sm sm:text-base md:text-lg font-medium my-1">
+        {children}
+      </h5>
     ),
     h6: ({ children }) => (
-      <h6 className="text-sm font-medium my-1">{children}</h6>
+      <h6 className="text-xs sm:text-sm md:text-base font-medium my-0.5 sm:my-1">
+        {children}
+      </h6>
     ),
     normal: ({ children }) => (
-      <p className="text-lg text-gray-800 leading-relaxed my-2">{children}</p>
+      <p className="text-base sm:text-lg text-gray-800 leading-relaxed my-1.5 sm:my-2">
+        {children}
+      </p>
     ),
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc list-inside my-2 text-base">{children}</ul>
+      <ul className="list-disc list-inside my-2 text-sm sm:text-base">
+        {children}
+      </ul>
     ),
     number: ({ children }) => (
-      <ol className="list-decimal list-inside my-2 text-base">{children}</ol>
+      <ol className="list-decimal list-inside my-2 text-sm sm:text-base">
+        {children}
+      </ol>
     ),
   },
   listItem: {

@@ -29,13 +29,13 @@ export const BlogDetailsView = ({ article }: { article: IBlog }) => {
           backgroundImage: `url(${mainImage ? urlForImage(mainImage).url() : "https://static.vecteezy.com/system/resources/previews/010/709/854/non_2x/protecting-the-earth-from-plastic-garbage-planet-earth-with-plastic-bottles-a-banner-symbolizing-recycling-protecting-the-environment-and-improving-life-on-earth-free-photo.jpg"}`,
         }}
       ></div>
-      <div className="container px-4 mx-auto">
+      <div className="container px-0 sm:px-4 mx-auto">
         <div className="grid grid-cols-12">
           <div className="col-span-12">
             <div className="relative z-10 grid grid-cols-12 gap-4 -mt-40 -md:mt-40 bg-white text-black px-4 rounded-md">
               <div className="col-span-12">
-                <div className="p-[24px]">
-                  <div className="bg-white pb-[265px]">
+                <div className="p-0 sm:p-6">
+                  <div className="bg-white pb-[120px] sm:pb-[180px] md:pb-[220px] lg:pb-[265px]">
                     <div className="wrapper">
                       <div className=" mx-auto">
                         <div className="flex items-center">
@@ -50,7 +50,7 @@ export const BlogDetailsView = ({ article }: { article: IBlog }) => {
                         </div>
 
                         {title ? (
-                          <Heading className="my-12 text-[28px] text-primary tracking-[-0.32px] flex items-center justify-center">
+                          <Heading className="my-8 sm:my-10 md:my-12 lg:my-16 text-[20px] sm:text-[24px] md:text-[28px] text-primary tracking-[-0.32px] flex items-center justify-center">
                             {title}
                           </Heading>
                         ) : null}

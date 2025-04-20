@@ -16,7 +16,7 @@ export const SanityImage = (props: Props) => {
   if (!imageProps) return null;
 
   return (
-    <figure className="relative w-[600px]">
+    <figure className="relative w-full max-w-[600px] mx-auto">
       <Image
         {...imageProps}
         alt={alt}
