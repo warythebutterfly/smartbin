@@ -9,6 +9,7 @@ import {
 } from "~/sanity/lib";
 import { GetStaticProps } from "next";
 import { PreviewCareersPage } from "@/components/sanity";
+import NotFoundPage from "../404";
 
 interface PageProps {
   data: Career[];
@@ -47,6 +48,7 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
 };
 
 const Careers = ({ data, category, preview, previewToken }: PageProps) => {
+  return <NotFoundPage />;
   if (preview && previewToken) {
     return <PreviewCareersPage data={data} category={category} />;
   }

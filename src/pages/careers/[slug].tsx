@@ -8,6 +8,7 @@ import {
   getClient,
 } from "~/sanity/lib";
 import { PreviewCareerDetailsPage } from "@/components/sanity";
+import NotFoundPage from "../404";
 
 interface PageProps {
   data: Career;
@@ -60,6 +61,7 @@ export const getStaticPaths = async () => {
 };
 
 const CareerDetail = ({ data, preview, previewToken }: PageProps) => {
+  <NotFoundPage />;
   if (preview && previewToken) {
     return <PreviewCareerDetailsPage data={data} />;
   }
