@@ -22,7 +22,7 @@ export const BlogDetailsView = ({ article }: { article: IBlog }) => {
   ];
 
   return (
-    <section className="bg-[#daffd6]">
+    <section className="bg-[#f5faf0]">
       <div
         className="ezy__travel1_JIUyTMc4 py-20 md:p-[100px] bg-[#0b1727] h-[400px] object-cover text-white relative z-1 bg-cover bg-no-repeat bg-center flex justify-center items-end overflow-hidden"
         style={{
@@ -43,7 +43,7 @@ export const BlogDetailsView = ({ article }: { article: IBlog }) => {
                             href="/blog"
                             className="py-[10px] text-[#9CA3AF]"
                           >
-                            <button className="bg-primary h-[40px] w-[40px] rounded-full border border-white hover:border-blue-500  hover:text-blue-500 transition ease-in-out duration-500 flex justify-center items-center cursor-pointer mr-4 lg:mr-0">
+                            <button className="bg-primary h-[40px] w-[40px] rounded-full border border-white hover:border-blue-500 text-white transition ease-in-out duration-500 flex justify-center items-center cursor-pointer mr-4 lg:mr-0">
                               <ChevronLeft className="text-xl" />
                             </button>
                           </Link>
