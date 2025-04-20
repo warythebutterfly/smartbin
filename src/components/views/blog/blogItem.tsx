@@ -40,11 +40,11 @@ const BlogItem = ({ blog }: { blog: IBlog }) => {
             <span className="text-sm text-gray-500">{publishedAt}</span>
           </span>
         </p>
-        <a href="#!">
-          <h5 className="text-[19px] font-medium leading-6 hover:text-blue-600 mb-4">
+        <Link href={`blog/${slug}`}>
+          <h5 className="text-[19px] font-medium leading-6 hover:text-primary mb-4">
             {title}
           </h5>
-        </a>
+        </Link>
         <div className="text-sm text-gray-700 max-h-[250px] overflow-y-auto">
           <p>{excerpt}</p>
         </div>
