@@ -131,6 +131,10 @@ const Footer = () => {
       href: "/blog",
     },
     {
+      title: "Training",
+      href: "https://yctplastogastraininghub.com/lms",
+    },
+    {
       title: "Our app",
       href: "https://bine.yctplastogashub.com",
     },

@@ -198,6 +198,12 @@ export const Navbar = () => {
               Blog
             </Link>
             <Link
+              href={"https://yctplastogastraininghub.com/lms"}
+              className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
+            >
+              Training
+            </Link>
+            <Link
               href={"https://bine.yctplastogashub.com"}
               className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
             >
@@ -238,6 +244,12 @@ export const Navbar = () => {
                 className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
               >
                 Blog
+              </Link>
+              <Link
+                href={"https://yctplastogastraininghub.com/lms"}
+                className="text-base font-normal transition-all duration-200 text-[#003464] hover:text-blue-500 focus:text-blue-500"
+              >
+                Training
               </Link>
               <Link
                 href={"https://bine.yctplastogashub.com"}
