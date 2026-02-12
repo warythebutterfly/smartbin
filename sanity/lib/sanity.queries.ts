@@ -38,6 +38,7 @@ const teamFields = groq`
   position,
   order,
   avatar,
+  bio,
 `;
 
 const landingFields = groq`
@@ -250,6 +251,7 @@ export interface Team {
   order: string;
   position: any;
   avatar: any;
+  bio: string;
 }
 
 export interface Product {

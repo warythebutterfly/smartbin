@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Button, Heading } from "@/components/ui";
 import Image from "next/image";
 import { Team, urlForImage } from "~/sanity/lib";
@@ -15,7 +15,7 @@ const TeamView = ({ members }: { members: Team[] }) => {
       <section className="pt-28 pb-36 bg-[#f5faf0] bg-team bg-no-repeat bg-right">
         <div className="wrapper">
           {/* Intro */}
-          <div className="max-w-4xl mx-auto text-center mb-20">
+          <div className="max-w-4xl mx-auto text-center mb-20 px-4">
             <Heading className="text-3xl md:text-5xl font-bold text-primary leading-tight mb-8">
               Meet Our Team
             </Heading>
@@ -37,42 +37,15 @@ const TeamView = ({ members }: { members: Team[] }) => {
           </div>
 
           {/* Team Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-4xl xl:max-w-6xl bg-white p-12 flex items-center justify-center rounded-xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mx-auto max-w-7xl bg-white p-8 md:p-12 rounded-xl">
             {members?.length === 0 ? (
               <div className="col-span-full text-center text-xl font-medium text-gray-500">
                 No Data!
               </div>
             ) : (
-              members.map((member) => (
-                <div key={member._id}>
-                  <img
-                    src={urlForImage(member.avatar).url()}
-                    alt={member.name}
-                    className="max-w-full h-auto rounded-full mx-auto"
-                    width="200"
-                  />
-                  <div className="px-4 py-6 xl:px-6 text-center">
-                    <h4 className="text-2xl font-medium mb-2 text-primary">
-                      {member.name}
-                    </h4>
-                    <h6 className="font-medium text-neutral-600">
-                      {member.position}
-                    </h6>
-                    {/* <p className="opacity-50 mb-0">{member.bio}</p> */}
-                    {/* <div className="mt-6">
-				{member.socialLinks.map((link, i) => (
-					<a
-						href={link.href}
-						className="inline-block opacity-60 transition duration-300 hover:translate-y-1 hover:opacity-100 mr-4"
-						key={i}
-					>
-						<FontAwesomeIcon icon={link.icon} />
-					</a>
-				))}
-			</div> */}
-                  </div>
-                </div>
-              ))
+              [...members]
+                .sort((a, b) => parseInt(a.order) - parseInt(b.order))
+                .map((member) => <TeamCard key={member._id} member={member} />)
             )}
           </div>
         </div>
@@ -81,14 +54,51 @@ const TeamView = ({ members }: { members: Team[] }) => {
   );
 };
 
+const TeamCard = ({ member }: { member: Team }) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="flex flex-col items-center text-center px-4 py-6 rounded-lg hover:shadow-md transition">
+      {/* Avatar */}
+      <div className="w-40 h-40 rounded-full overflow-hidden mb-6">
+        {member.avatar && (
+          <Image
+            src={urlForImage(member.avatar).url()}
+            alt={member.name}
+            width={160}
+            height={160}
+            className="w-full h-full object-cover"
+          />
+        )}
+      </div>
+
+      {/* Name & Role */}
+      <h4 className="text-xl font-semibold mb-1 text-primary">{member.name}</h4>
+      <p className="text-sm font-medium text-neutral-600 mb-3">
+        {member.position}
+      </p>
+
+      {/* Bio Toggle */}
+      {member.bio && (
+        <>
+          <button
+            onClick={() => setOpen(!open)}
+            className="text-sm font-medium text-[#012147] underline underline-offset-4 mb-2"
+          >
+            {open ? "Hide role" : "Read role"}
+          </button>
+
+          {open && (
+            <div className="text-sm text-gray-500 space-y-2">
+              {member.bio.split("\n").map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
+            </div>
+          )}
+        </>
+      )}
+    </div>
+  );
+};
+
 export default TeamView;
-
-/* 
-                   <Image
-                    src={urlForImage(member.avatar).url()}
-                    alt={member.name}
-                    className="max-w-full h-auto rounded-full mx-auto"
-                    width={230}
-                  />
-
-*/
