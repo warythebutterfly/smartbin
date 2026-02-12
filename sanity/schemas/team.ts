@@ -8,14 +8,14 @@ export default defineType({
     defineField({
       name: "name",
       title: "Name",
-      description: "Name of the employee",
+      description: "Name of the team member",
       type: "string",
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: "position",
       title: "Position",
-      description: "Position of the employee",
+      description: "Position of the team member",
       type: "string",
       validation: (rule) => rule.required(),
     }),
@@ -34,6 +34,13 @@ export default defineType({
       options: {
         hotspot: true,
       },
+    }),
+    defineField({
+      name: "bio",
+      title: "Bio",
+      description: "Bio of the team member",
+      type: "string",
+      // validation: (rule) => rule.required(),
     }),
   ],
   orderings: [
